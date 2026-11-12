@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "visualizations": [
+    {
+      "id": "step-triangle",
+      "code": "STEP//SIGNS",
+      "title": "两行之后，符号回来",
+      "title_en": "Two rows bring the signs back",
+      "summary": "改变步长与行号，观察两行一步的符号传播及被排除的参数；有限图示不是证明。",
+      "summary_en": "Vary step and row to inspect two-row sign propagation and excluded parameters; finite illustrations are not proofs.",
+      "path": "step-triangle/",
+      "thumbnail": "step-triangle/thumb.jpg",
+      "status": "live",
+      "added": "2026-11-12",
+      "tags": [
+        "递推",
+        "符号",
+        "三角形"
+      ],
+      "tags_en": [
+        "recurrence",
+        "signs",
+        "triangle"
+      ],
+      "theory": [
+        {
+          "label": "第 1–2 章：符号与整数分类",
+          "label_en": "Chapters 1–2: signs and integer classification",
+          "href": "../zh/ch02-signs.html",
+          "href_en": "../en/ch02-signs.html"
+        }
+      ],
+      "lean": []
+    }
+  ]
+}

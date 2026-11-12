@@ -1,0 +1,36 @@
+{
+  "base_url": "https://mathesis-papers.github.io/chen-chen-step-m-eulerian-parity-positivity/",
+  "visible_books": 1,
+  "exact_lean_citations": 0,
+  "written_proof_results_per_language": 8,
+  "media": {
+    "viz": [
+      "step-triangle"
+    ],
+    "films": [],
+    "slides": [
+      "seminar"
+    ]
+  },
+  "pdf_files": [
+    {
+      "path": "chen-chen-step-m-eulerian-parity-positivity/slides/seminar/chen-chen-step-m-eulerian-parity-positivity-seminar-en-notes.pdf",
+      "size": 264252,
+      "sha256": "56b4e882360725fc268b08bb90fc17fca5cfda204569a5c5d0e5d250f3cc2cdd",
+      "kind": "slides-notes-pdf",
+      "lang": "en",
+      "variant": "seminar"
+    },
+    {
+      "path": "chen-chen-step-m-eulerian-parity-positivity/slides/seminar/chen-chen-step-m-eulerian-parity-positivity-seminar-en.pdf",
+      "size": 247562,
+      "sha256": "0679bbfb6fe955ae69b7f47c69145392d807b691bdcd550b9d3e6afb4c765bd2",
+      "kind": "slides-pdf",
+      "lang": "en",
+      "variant": "seminar"
+    }
+  ],
+  "reader_html_built": false,
+  "cover": "CSS fallback; Typst unavailable",
+  "local_pdf_links_resolve": true
+}

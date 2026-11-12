@@ -1,0 +1,10 @@
+kind = "academic"
+editions = ["en"]
+aspect = "4:3"
+structure_colour = "#0e2c8e"
+short_author = "H. Ma, W. Zhang"
+short_title = "Step-m Eulerian triangles"
+date = "Mathesis manuscript seminar · version 2"
+navigation_symbols = false
+[title]
+en = "Parity, positivity and root growth"

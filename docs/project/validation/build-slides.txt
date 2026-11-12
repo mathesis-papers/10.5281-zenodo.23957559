@@ -1,0 +1,83 @@
+→ slides chen-chen-step-m-eulerian-parity-positivity
+  academic: seminar-en.pdf
+✗ slides chen-chen-step-m-eulerian-parity-positivity: Tectonic failed: /Users/lexa/Desktop/lexa/omega/mathesis-paper-chen-chen/build/stage/chen-chen-step-m-eulerian-parity-positivity/beamer/seminar/en/notes-build.log
+note: "version 2" Tectonic command-line interface activated
+note: Running TeX ...
+note: downloading lmsans9-regular.otf
+note: Writing `notes.log` (28.3125 KiB)
+
+("34) in font nullfont!
+warning: could not represent character "4" (0x34) in font "nullfont"
+warning: notes.tex:103:
+Missing character: There is no 4 ("34) in font nullfont!
+warning: could not represent character "4" (0x34) in font "nullfont"
+warning: notes.tex:103: Missing character: There is no 0 ("30) in font nullfont!
+warning: could not represent character "0" (0x30) in font "nullfont"
+warning: notes.tex:117:
+Missing character: There is no 4 ("34) in font nullfont!
+warning: could not represent character "4" (0x34) in font "nullfont"
+warning: notes.tex:117: Missing character: There is no 5 ("35) in font nullfont!
+warning: could not represent character "5" (0x35) in font "nullfont"
+warning: notes.tex:131:
+Missing character: There is no 5 ("35) in font nullfont!
+warning: could not represent character "5" (0x35) in font "nullfont"
+warning: notes.tex:131: Missing character: There is no 0 ("30) in font nullfont!
+warning: could not represent character "0" (0x30) in font "nullfont"
+warning: notes.tex:145:
+Missing character: There is no 5 ("35) in font nullfont!
+warning: could not represent character "5" (0x35) in font "nullfont"
+warning: notes.tex:145: Missing character: There is no 5 ("35) in font nullfont!
+warning: could not represent character "5" (0x35) in font "nullfont"
+warning: notes.tex:178:
+Missing character: There is no 6 ("36) in font nullfont!
+warning: could not represent character "6" (0x36) in font "nullfont"
+warning: notes.tex:178: Missing character: There is no 0 ("30) in font nullfont!
+warning: could not represent character "0" (0x30) in font "nullfont"
+warning: notes.tex:192:
+Missing character: There is no 6 ("36) in font nullfont!
+warning: could not represent character "6" (0x36) in font "nullfont"
+warning: notes.tex:192: Missing character: There is no 5 ("35) in font nullfont!
+warning: could not represent character "5" (0x35) in font "nullfont"
+error: notes.tex:207: Missing $ inserted
+error: halted on potentially-recoverable error as specified
+
+FAILED slides chen-chen-step-m-eulerian-parity-positivity: Tectonic failed: /Users/lexa/Desktop/lexa/omega/mathesis-paper-chen-chen/build/stage/chen-chen-step-m-eulerian-parity-positivity/beamer/seminar/en/notes-build.log
+note: "version 2" Tectonic command-line interface activated
+note: Running TeX ...
+note: downloading lmsans9-regular.otf
+note: Writing `notes.log` (28.3125 KiB)
+
+("34) in font nullfont!
+warning: could not represent character "4" (0x34) in font "nullfont"
+warning: notes.tex:103:
+Missing character: There is no 4 ("34) in font nullfont!
+warning: could not represent character "4" (0x34) in font "nullfont"
+warning: notes.tex:103: Missing character: There is no 0 ("30) in font nullfont!
+warning: could not represent character "0" (0x30) in font "nullfont"
+warning: notes.tex:117:
+Missing character: There is no 4 ("34) in font nullfont!
+warning: could not represent character "4" (0x34) in font "nullfont"
+warning: notes.tex:117: Missing character: There is no 5 ("35) in font nullfont!
+warning: could not represent character "5" (0x35) in font "nullfont"
+warning: notes.tex:131:
+Missing character: There is no 5 ("35) in font nullfont!
+warning: could not represent character "5" (0x35) in font "nullfont"
+warning: notes.tex:131: Missing character: There is no 0 ("30) in font nullfont!
+warning: could not represent character "0" (0x30) in font "nullfont"
+warning: notes.tex:145:
+Missing character: There is no 5 ("35) in font nullfont!
+warning: could not represent character "5" (0x35) in font "nullfont"
+warning: notes.tex:145: Missing character: There is no 5 ("35) in font nullfont!
+warning: could not represent character "5" (0x35) in font "nullfont"
+warning: notes.tex:178:
+Missing character: There is no 6 ("36) in font nullfont!
+warning: could not represent character "6" (0x36) in font "nullfont"
+warning: notes.tex:178: Missing character: There is no 0 ("30) in font nullfont!
+warning: could not represent character "0" (0x30) in font "nullfont"
+warning: notes.tex:192:
+Missing character: There is no 6 ("36) in font nullfont!
+warning: could not represent character "6" (0x36) in font "nullfont"
+warning: notes.tex:192: Missing character: There is no 5 ("35) in font nullfont!
+warning: could not represent character "5" (0x35) in font "nullfont"
+error: notes.tex:207: Missing $ inserted
+error: halted on potentially-recoverable error as specified

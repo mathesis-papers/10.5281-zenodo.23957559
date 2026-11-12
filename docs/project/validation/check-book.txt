@@ -1,0 +1,16 @@
+WARNING books/chen-chen-step-m-eulerian-parity-positivity/en/source-files.md:5: link leaves the book directory: ../../../paper.json
+WARNING books/chen-chen-step-m-eulerian-parity-positivity/en/source-files.md:5: link leaves the book directory: ../../../formalization/nodes.json
+WARNING books/chen-chen-step-m-eulerian-parity-positivity/en/source-files.md:5: link leaves the book directory: ../../../CITATION.cff
+WARNING books/chen-chen-step-m-eulerian-parity-positivity/en/source-files.md:6: link leaves the book directory: ../../../paper.pdf
+WARNING books/chen-chen-step-m-eulerian-parity-positivity/en/source-files.md:7: link leaves the book directory: ../../../manuscript/note.tex
+WARNING books/chen-chen-step-m-eulerian-parity-positivity/en/source-files.md:7: link leaves the book directory: ../../../manuscript/companion-results.tex
+WARNING books/chen-chen-step-m-eulerian-parity-positivity/en/source-files.md:7: link leaves the book directory: ../../../manuscript/coverage.tex
+WARNING books/chen-chen-step-m-eulerian-parity-positivity/en/source-files.md:8: link leaves the book directory: ../../../manuscript/source-guide.md
+WARNING books/chen-chen-step-m-eulerian-parity-positivity/en/source-files.md:8: link leaves the book directory: ../../../manuscript/README.md
+WARNING books/chen-chen-step-m-eulerian-parity-positivity/en/source-files.md:8: link leaves the book directory: ../../../manuscript/metadata.json
+WARNING books/chen-chen-step-m-eulerian-parity-positivity/en/source-files.md:9: link leaves the book directory: ../../../manuscript/verify.py
+WARNING books/chen-chen-step-m-eulerian-parity-positivity/en/source-files.md:9: link leaves the book directory: ../../../manuscript/finite-check.json
+WARNING books/chen-chen-step-m-eulerian-parity-positivity/en/source-files.md:10: link leaves the book directory: ../../../.mathesis/book.json
+WARNING books/chen-chen-step-m-eulerian-parity-positivity/en/source-files.md:10: link leaves the book directory: ../../../docs/project/STATEMENT-REVIEW.md
+check: hidden by site.toml [books].hide, not checked: example-monograph, example-primer
+check: 1 book(s), 0 error(s), 14 warning(s)

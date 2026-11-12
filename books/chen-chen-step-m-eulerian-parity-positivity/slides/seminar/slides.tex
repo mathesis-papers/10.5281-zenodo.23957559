@@ -1,0 +1,267 @@
+\documentclass{beamer}
+\input{tbook-deck}
+\title{Parity, positivity and root growth}
+\subtitle{Chen and Chen's step-$m$ Eulerian triangles}
+\author{Haobo Ma\inst{1} \and Wenlin Zhang\inst{1,2}}
+\institute{\inst{1}Chrono AI, Singapore\qquad\inst{2}National University of Singapore, Singapore}
+\date{Mathesis manuscript seminar}
+% A plain notes page avoids the default clock graphic and keeps notes readable.
+\setbeamertemplate{note page}{\insertnote}
+\begin{document}
+% Manuscript: Title, abstract and version provenance
+\begin{frame}
+\titlepage
+\vspace{0.5em}
+{\centering\tiny Prepared by Mathesis from manuscript version 2; not reviewed by the authors.\\Explanations and numerical illustrations are not verification.\par}
+\note{Timing: 1 minute. This is a prepared seminar deck about the authors' manuscript, not a record of a talk delivered by them. Preserve their recorded order and the distinction between manuscript proofs and exact frozen Lean matches. The book has the exact recorded paper title, source files and references. Total planned main talk: about 25 minutes.}
+\end{frame}
+% Manuscript: Sections 1--6, reading plan
+\begin{frame}{Outline}
+\tableofcontents
+\note{Timing: 1 minute. First explain the recurrence and the two-row sign mechanism. Then show how the same rows lead to sum identities, arithmetic obstructions to zero, and an exceptional root-growth scale. Finish with precise coverage and evidence limits.}
+\end{frame}
+\section[Signs]{The recurrence and its signs}
+\subsection{The question}
+% Manuscript: Section 1, equations (1)--(2)
+\begin{frame}{One row from its two neighbours}
+For real $m$ and integers $1\leq k\leq n$,
+\[
+T_m(n,1)=T_m(n,n)=1.
+\]
+For $1<k<n$ only,
+\begin{align*}
+T_m(n,k)={}&[m(n-k)+1]T_m(n-1,k-1)\\
+          &+[m(k-1)+1]T_m(n-1,k).
+\end{align*}
+At $m=0$: Pascal's triangle. For negative $m$, the weights can be negative.
+\medskip
+\begin{block}{Question}Can every even row still be strictly positive?\end{block}
+\note{Timing: 1.5 minutes. Induction determines a unique triangle; no outside values are required. Emphasize that the recurrence is for interior positions and that the boundary is prescribed. Explain why a one-step positivity argument fails as soon as the weights turn negative.}
+\end{frame}
+% Manuscript: Theorem 1 (thm:main)
+\begin{frame}{The sign pattern holds for real parameters}
+\begin{bookresult}{paper-thm-main}
+For every real $r\geq3$, at step $m=-r$:
+\begin{itemize}
+\item $T_{-r}(n,k)>0$ for positive even $n$, $1\leq k\leq n$;
+\item $T_{-r}(n,k)<0$ for odd $n\geq3$, $1<k<n$.
+\end{itemize}
+Thus the three OEIS conjectures and Chen--Chen Conjecture 2 hold for their stated integer parameters.
+\end{bookresult}
+\note{Timing: 1.5 minutes. The source conjectures are in OEIS A392664--A392666, COMMENTS, and the executive summary cited as reference 6 in the book. Positive even means n greater than zero and even. Do not include the odd-row boundary in the negative conclusion. This is the real-parameter manuscript theorem; the nearby public Lean theorem is an integer even-row specialization.}
+\end{frame}
+% Manuscript: Theorem 1, finite illustration from equations (1)--(2)
+\begin{frame}{A finite sign picture}
+\centering
+\BookViz{step-triangle}{even}
+\smallskip
+{\small Step $-3$: cyan is positive, magenta negative.\\Only the first ten rows are shown; this is an illustration.}
+\note{Timing: 1 minute. The image is a committed paper snapshot of the same interactive page used in the book. Click it in a PDF viewer to open the live card after publication. The highlighted cell is current, not verified. Ask the audience to notice positive boundaries in odd rows and alternating interior signs. No finite plot proves all-row positivity.}
+\end{frame}
+\subsection{Two-row propagation}
+% Manuscript: Lemma 2, equation (4)
+\begin{frame}{The boundary needs its own lemma}
+\begin{bookresult}{paper-lem-second}
+For real $r\geq3$, $T_{-r}(n,2)>0$ whenever $n\geq2$ is even.
+\end{bookresult}
+Put $a_n=T_{-r}(n,2)$. Eliminating one row gives
+\[
+a_{n+2}=(r-1)^2a_n+r(r-2)n+2-r^2.
+\]
+The first two even values are $a_2=1$ and
+\[
+a_4=2r(r-3)+3\geq3.
+\]
+For $n\geq4$, the forcing term is strictly positive.
+\note{Timing: 2 minutes. The forcing term is bounded below by 3r squared minus 8r plus 2, equal to 3(r-3) squared plus 10(r-3) plus 5. State why n=2 must be treated separately. Reflection handles the next-to-right boundary too. This is the step that a tempting informal sign argument can miss.}
+\end{frame}
+% Manuscript: Proof of Theorem 1, reflection equation (3)
+\begin{frame}{Two rows close the induction}
+\begin{enumerate}
+\item Start with row $2=(1,1)$.
+\item Positive even row $n$ plus two negative weights gives a negative odd interior in row $n+1$.
+\item In row $n+2$, two negative predecessors and two negative weights give a positive interior.
+\item Boundaries remain 1. Lemma 2 and reflection handle the two positions next to them.
+\end{enumerate}
+\medskip
+The range $3\leq k\leq n$ is empty when $n=2$; the boundary argument still covers the whole next row.
+\note{Timing: 2 minutes. Keep the four classes of positions distinct: left boundary, left second column, deep interior, and their right reflections. The proof is ordinary real arithmetic and induction. It is preserved as a written argument, not silently certified by a narrower frozen statement.}
+\end{frame}
+% Manuscript: Corollary 3 (cor:classification)
+\begin{frame}{Exactly which integer steps work?}
+\begin{bookresult}{paper-cor-classification}
+For integer $m$, every positive even row is entrywise nonnegative iff
+\[
+m\leq-3\quad\text{or}\quad m\geq0.
+\]
+For exactly these parameters all positive even rows are strictly positive.
+\end{bookresult}
+For $m\geq0$ both weights are positive. The remaining integers fail at
+\[
+T_m(4,2)=T_m(4,3)=2m^2+6m+3=-1\quad(m=-1,-2).
+\]
+\note{Timing: 1 minute. This is an integer iff classification. Do not extend it to the real interval between minus three and zero. One explicit negative entry is enough to disprove the all-even-row nonnegativity condition.}
+\end{frame}
+\section[Sums]{Sums and arithmetic}
+\subsection{Compressing a row}
+% Manuscript: Corollary 4 (cor:sums)
+\begin{frame}{Add a row, or alternate its signs}
+\begin{bookresult}{paper-cor-sums}
+For every real $m$,
+\[
+S_n(m)=\sum_{k=1}^nT_m(n,k)=\prod_{j=0}^{n-2}(mj+2),\quad S_1=1.
+\]
+For even $n$, $R_{m,n}(-1)=0$, and the odd-position and even-position sums both equal $S_n/2$.
+\end{bookresult}
+Each old entry gets the same total weight $m(n-2)+2$. Mirror pairs cancel at $y=-1$.
+\note{Timing: 1 minute. Define R as the row-generating polynomial if needed. Explain that the two outgoing weights sum to a position-independent value. The n=1 boundary is separate; the row-sum induction starts with S2=2. Cancellation uses that mirror positions have opposite parity in even rows.}
+\end{frame}
+% Manuscript: Corollary 5 (cor:annulus), Kakeya reference
+\begin{frame}{Positive coefficients give a root annulus}
+\begin{bookresult}{paper-cor-annulus}
+For real $m\leq-3$, even $n\geq2$, every root $z$ of $R_{m,n}$ satisfies
+\[
+L_n\leq|z|\leq U_n,
+\]
+where $L_n$ and $U_n$ are the minimum and maximum of
+$T_m(n,k)/T_m(n,k+1)$, $1\leq k<n$.
+All ratios are positive and $L_nU_n=1$.
+\end{bookresult}
+Enestr\"om--Kakeya: rescale coefficients to be monotone, then use the triangle inequality. See Kakeya (1912), reference 7 in the book.
+\note{Timing: 1 minute. Outline the identity for (1-w)Q(w) from the book proof. Reciprocity supplies the lower bound. These radii depend on the row; this is not a claim of a fixed annulus for all normalized roots. Positivity of coefficients does not imply that every root is real.}
+\end{frame}
+\subsection{Odd-row nonvanishing}
+% Manuscript: Corollary 6 (cor:odd), complete parameter generalizations
+\begin{frame}{Oddness and congruences prevent zero}
+Let $A_q(m)=R_{m,2q+1}(-1)$, with $A_0(m)=1$.
+\begin{bookresult}{paper-cor-odd}
+For every integer $q\geq1$,
+\[
+A_q(-4)/8^q\text{ is odd},\qquad A_q(-5)\equiv1\pmod3.
+\]
+The first holds with $(-4,8)$ replaced by $(-r,2r)$ for every positive integer $4\mid r$; the second holds for every integer $m\equiv1\pmod3$.
+Both source assertions therefore hold for all odd rows.
+\end{bookresult}
+\note{Timing: 1.5 minutes. Oddness includes integrality. A nonzero residue modulo three also prevents zero. This is stronger information than observing a list of nonzero sample values, and it covers all odd rows. The q=0 boundary is already one.}
+\end{frame}
+% Manuscript: Corollary 6 proof, equations (5)--(6)
+\begin{frame}{One generating function packages every row}
+The polynomial recurrence is
+\begin{align*}
+R_{m,n+1}(y)={}&[1+(m(n-1)+1)y]R_{m,n}(y)\\
+&+my(1-y)R'_{m,n}(y).
+\end{align*}
+At $m=-r$ and $y=-1$ it yields
+\[
+\sum_{q\geq0} A_q(-r)\frac{t^{2q}}{(2q)!}=\cosh(rt)^{2/r}.
+\]
+\begin{itemize}
+\item Even-block partitions: after normalization, only pair partitions remain odd when $4\mid r$.
+\item Modulo 3: reduce to $m=1$ and evaluate at $y=-1$.
+\end{itemize}
+\note{Timing: 1.5 minutes. The full two-variable exponential generating function and its differential equation are in the book. Its uniqueness comes from comparing the original recurrence coefficients. For the partition argument, a block of size 2j contributes (r/2) to the power j-1 times an integer Cj after dividing by (2r) to the power q. For the mod-three argument, odd powers are congruent to the base modulo three.}
+\end{frame}
+\section[Roots]{Root growth}
+\subsection{The dominant columns}
+% Manuscript: Theorem 7 (thm:growth), ordinary parameter ranges
+\begin{frame}{Most parameters have a linear limit}
+\begin{bookresult}{paper-thm-growth}
+For every real $m>0$ and every real $r\geq4$,
+\[
+\frac{M_n(m)}{(m+1)^n}\longrightarrow\frac2{m(m+1)},
+\qquad
+\frac{M_n(-r)}{(r-1)^n}\longrightarrow\frac2{r(r-1)}.
+\]
+In particular $M_n(-4)/3^n\to1/6$ and $M_n(-5)/4^n\to1/10$.
+\end{bookresult}
+Here $M_n(m)$ is the largest root modulus, $n\geq2$.
+\note{Timing: 1 minute. This frame states the ordinary-range part of Theorem 7; the next gives its exceptional case and consequences. Do not replace r at least four with r at least three. The cited result is the same complete theorem in the book, with its full written proof.}
+\end{frame}
+% Manuscript: Theorem 7 (thm:growth), exceptional step -3 and source correction
+\begin{frame}{Step $-3$ lives on a different scale}
+\begin{bookresult}{paper-thm-growth}
+\[
+\frac{M_n(-3)}{5^{n/2}}\longrightarrow\frac1{\sqrt{45}},
+\qquad
+\frac{\log M_n(-3)}n\longrightarrow\tfrac12\log5.
+\]
+Consequently $M_n(-3)/2^n\to\infty$.
+The proposed growth invariance between steps $1$ and $-3$ fails.
+\end{bookresult}
+The limiting equation is $z^2+(-1)^n/45$, rather than a linear equation.
+\note{Timing: 1.5 minutes. The correction concerns the executive summary cited as reference 6, including its proposed one-third scaling constant. Separate the largest root modulus from the locations of all roots. Even and odd subsequences have different limiting quadratic zeros but the same limiting modulus.}
+\end{frame}
+% Manuscript: Theorem 7 proof, equations (7)--(10), Rouché reference
+\begin{frame}{Why the largest root is controlled}
+Write $a_j(n)=T_m(n,j+1)$. Reflection also makes this a leading coefficient.
+\[
+a_1(n)=\frac{2(m+1)^{n-1}}m-n+1-\frac2m\quad(m\ne0).
+\]
+A path bound controls all remaining columns. After scaling:
+\begin{itemize}
+\item ordinary ranges: the nonzero root equation approaches $z+c$ or $z+(-1)^nc$;
+\item step $-3$: the third column survives, giving a quadratic;
+\item Rouch\'e's theorem finds roots near the limiting zeros;
+\item the same uniform tail estimate excludes exterior roots.
+\end{itemize}
+\note{Timing: 2 minutes. Give the path bound: $|a_j(n)|$ is at most $((|m|+1)n^2)^j B_j^{n-1-j}$. The bases for $j\geq2$ are strictly smaller than the chosen main scale. At minus three the tail starts at $j=3$ with base 2 versus square root of 5. Rouché's theorem is the argument-principle comparison stated in DLMF section 1.10(iv), reference 2 in the book.}
+\end{frame}
+\subsection{Boundaries and limits}
+% Manuscript: Corollary 8 (cor:boundaryroots), boundary factorizations
+\begin{frame}{The excluded steps have unit-modulus roots}
+\begin{bookresult}{paper-cor-boundaryroots}
+For $q\geq1$,
+\begin{align*}
+R_{-1,2q}=R_{-2,2q}&=(1-y)^{2q-2}(1+y),\\
+R_{-1,2q+1}&=(1-y)^{2q-2}(1+y^2),\\
+R_{-2,2q+1}&=(1-y)^{2q}.
+\end{align*}
+Thus $M_n(-1)=M_n(-2)=1$ for $n\geq2$; both growth exponents are zero. Also $R_{0,n}=(1+y)^{n-1}$.
+\end{bookresult}
+\note{Timing: 1 minute. These factorizations follow in successive even-odd pairs from the polynomial recurrence. The m=-1 coefficient formula is attributed in the manuscript to Greubel's 2022 addition to OEIS A144431. The zero growth exponent corrects the executive summary's negative-infinity entry. The remaining assertions of this corollary appear next.}
+\end{frame}
+% Manuscript: Corollary 8 proof, explicit row 6 nonreal roots
+\begin{frame}{Positive coefficients need not mean real roots}
+\begin{bookresult}{paper-cor-boundaryroots}
+For real $m>0$ and $n\geq2$, all roots are simple and negative.
+At $m=-3$, nonreal roots occur already in row 6.
+\end{bookresult}
+\[
+R_{-3,6}(y)=(y+1)(y^4+16y^3+246y^2+16y+1).
+\]
+For real $y\ne0$, the quartic divided by $y^2$ is
+\[
+(y+y^{-1}+8)^2+180>0.
+\]
+Its four roots are nonreal.
+\note{Timing: 1 minute. The positive-m result uses sign changes at successive negative simple zeros and the intermediate value theorem, starting from 1+y. For the quartic, zero is not a root because its constant term is one; the displayed positivity excludes every other real point. The positive coefficients at row 6 do not contradict the negative-step sign theorem.}
+\end{frame}
+% Manuscript: Section 6 coverage table and final limitations
+\begin{frame}{What this manuscript does not establish}
+\begin{itemize}
+\item All-row reality of the roots at steps $-4,-5$ is not covered.
+\item Remaining complex-parameter asymptotics are not covered.
+\item A fixed positive inner radius cannot contain all scaled zeros: the even-row root $-1$ scales toward zero.
+\item Finite plots and reported tightness percentages are separate numerical claims.
+\end{itemize}
+\medskip
+The finite-row annulus remains valid. The growth theorem concerns the largest modulus, not every scaled root.
+\note{Timing: 1 minute. Preserve the distinction between refuting a proposed universal claim and supplying a full classification. Do not describe an unproved all-row root-reality assertion as a consequence of the plots or the positivity theorem.}
+\end{frame}
+% Manuscript: Section 6 verification discussion; book exact-statement comparison
+\begin{frame}{A recurrence, three kinds of information}
+\begin{enumerate}
+\item Two-row induction explains the signs.
+\item Summation and arithmetic explain cancellation and nonvanishing.
+\item Dominant columns explain the exceptional root scale.
+\end{enumerate}
+\medskip
+This book contains eight written-proof results and no exact Lean citations for them. The frozen integer even-row theorem is a specialization, not the full real-parameter result.
+\medskip
+Sources: manuscript version 2, its seven-entry bibliography, and the book's claim comparison at \PinnedCommit.
+\note{Timing: 1 minute, followed by discussion. The planned main content is about 25 minutes including transitions. Ask which part of the real-parameter extension or root argument the audience wants to inspect. The appendix ledger is generated from bookresult citations; it records evidence status rather than upgrading the catalog.}
+\end{frame}
+\appendix
+% Manuscript: Book claim mapping and pinned frozen-source comparison; generated ledger
+\FormalVerification
+\end{document}

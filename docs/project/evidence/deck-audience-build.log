@@ -1,0 +1,148 @@
+note: "version 2" Tectonic command-line interface activated
+note: Running TeX ...
+note: Rerunning TeX because "audience.out" changed ...
+note: Running xdvipdfmx ...
+note: Writing `audience.pdf` (241.759765625 KiB)
+note: Writing `audience.log` (30.3779296875 KiB)
+note: Skipped writing 5 intermediate files (use --keep-intermediates to keep them)
+warning: audience.tex:18:
+Missing character: There is no 1 ("31) in font nullfont!
+warning: could not represent character "1" (0x31) in font "nullfont"
+warning:   you may need to load the `fontspec` package and use (e.g.) \setmainfont to
+warning:   choose a different font that covers the unrepresentable character(s)
+warning: audience.tex:18: Missing character: There is no 7 ("37) in font nullfont!
+warning: could not represent character "7" (0x37) in font "nullfont"
+warning: audience.tex:41:
+Missing character: There is no 2 ("32) in font nullfont!
+warning: could not represent character "2" (0x32) in font "nullfont"
+warning: audience.tex:41: Missing character: There is no 3 ("33) in font nullfont!
+warning: could not represent character "3" (0x33) in font "nullfont"
+warning: audience.tex:53:
+Missing character: There is no 2 ("32) in font nullfont!
+warning: could not represent character "2" (0x32) in font "nullfont"
+warning: audience.tex:53: Missing character: There is no 9 ("39) in font nullfont!
+warning: could not represent character "9" (0x39) in font "nullfont"
+warning: audience.tex:78:
+Missing character: There is no 3 ("33) in font nullfont!
+warning: could not represent character "3" (0x33) in font "nullfont"
+warning: audience.tex:78: Missing character: There is no 4 ("34) in font nullfont!
+warning: could not represent character "4" (0x34) in font "nullfont"
+warning: audience.tex:105:
+Missing character: There is no 4 ("34) in font nullfont!
+warning: could not represent character "4" (0x34) in font "nullfont"
+warning: audience.tex:105: Missing character: There is no 0 ("30) in font nullfont!
+warning: could not represent character "0" (0x30) in font "nullfont"
+warning: audience.tex:119:
+Missing character: There is no 4 ("34) in font nullfont!
+warning: could not represent character "4" (0x34) in font "nullfont"
+warning: audience.tex:119: Missing character: There is no 5 ("35) in font nullfont!
+warning: could not represent character "5" (0x35) in font "nullfont"
+warning: audience.tex:133:
+Missing character: There is no 5 ("35) in font nullfont!
+warning: could not represent character "5" (0x35) in font "nullfont"
+warning: audience.tex:133: Missing character: There is no 0 ("30) in font nullfont!
+warning: could not represent character "0" (0x30) in font "nullfont"
+warning: audience.tex:147:
+Missing character: There is no 5 ("35) in font nullfont!
+warning: could not represent character "5" (0x35) in font "nullfont"
+warning: audience.tex:147: Missing character: There is no 5 ("35) in font nullfont!
+warning: could not represent character "5" (0x35) in font "nullfont"
+warning: audience.tex:180:
+Missing character: There is no 6 ("36) in font nullfont!
+warning: could not represent character "6" (0x36) in font "nullfont"
+warning: audience.tex:180: Missing character: There is no 0 ("30) in font nullfont!
+warning: could not represent character "0" (0x30) in font "nullfont"
+warning: audience.tex:194:
+Missing character: There is no 6 ("36) in font nullfont!
+warning: could not represent character "6" (0x36) in font "nullfont"
+warning: audience.tex:194: Missing character: There is no 5 ("35) in font nullfont!
+warning: could not represent character "5" (0x35) in font "nullfont"
+warning: audience.tex:223:
+Missing character: There is no 7 ("37) in font nullfont!
+warning: could not represent character "7" (0x37) in font "nullfont"
+warning: audience.tex:223: Missing character: There is no 0 ("30) in font nullfont!
+warning: could not represent character "0" (0x30) in font "nullfont"
+warning: audience.tex:239:
+Missing character: There is no 7 ("37) in font nullfont!
+warning: could not represent character "7" (0x37) in font "nullfont"
+warning: audience.tex:239: Missing character: There is no 5 ("35) in font nullfont!
+warning: could not represent character "5" (0x35) in font "nullfont"
+warning: audience.tex:267: Overfull \hbox (0.82pt too wide) in paragraph at lines 267--267
+warning: audience.tex:267: Overfull \hbox (0.82pt too wide) in paragraph at lines 267--267
+warning: audience.tex:267: Overfull \hbox (0.82pt too wide) in paragraph at lines 267--267
+warning: audience.tex:267: Overfull \hbox (0.82pt too wide) in paragraph at lines 267--267
+warning: audience.tex:267: Overfull \hbox (0.82pt too wide) in paragraph at lines 267--267
+warning: audience.tex:267: Overfull \hbox (0.82pt too wide) in paragraph at lines 267--267
+warning: audience.tex:267: Overfull \hbox (0.82pt too wide) in paragraph at lines 267--267
+warning: audience.tex:267: Overfull \hbox (0.82pt too wide) in paragraph at lines 267--267
+warning: audience.tex:18:
+Missing character: There is no 1 ("31) in font nullfont!
+warning: could not represent character "1" (0x31) in font "nullfont"
+warning:   you may need to load the `fontspec` package and use (e.g.) \setmainfont to
+warning:   choose a different font that covers the unrepresentable character(s)
+warning: audience.tex:18: Missing character: There is no 7 ("37) in font nullfont!
+warning: could not represent character "7" (0x37) in font "nullfont"
+warning: audience.tex:41:
+Missing character: There is no 2 ("32) in font nullfont!
+warning: could not represent character "2" (0x32) in font "nullfont"
+warning: audience.tex:41: Missing character: There is no 5 ("35) in font nullfont!
+warning: could not represent character "5" (0x35) in font "nullfont"
+warning: audience.tex:53:
+Missing character: There is no 3 ("33) in font nullfont!
+warning: could not represent character "3" (0x33) in font "nullfont"
+warning: audience.tex:53: Missing character: There is no 1 ("31) in font nullfont!
+warning: could not represent character "1" (0x31) in font "nullfont"
+warning: audience.tex:78:
+Missing character: There is no 3 ("33) in font nullfont!
+warning: could not represent character "3" (0x33) in font "nullfont"
+warning: audience.tex:78: Missing character: There is no 6 ("36) in font nullfont!
+warning: could not represent character "6" (0x36) in font "nullfont"
+warning: audience.tex:105:
+Missing character: There is no 4 ("34) in font nullfont!
+warning: could not represent character "4" (0x34) in font "nullfont"
+warning: audience.tex:105: Missing character: There is no 1 ("31) in font nullfont!
+warning: could not represent character "1" (0x31) in font "nullfont"
+warning: audience.tex:119:
+Missing character: There is no 4 ("34) in font nullfont!
+warning: could not represent character "4" (0x34) in font "nullfont"
+warning: audience.tex:119: Missing character: There is no 6 ("36) in font nullfont!
+warning: could not represent character "6" (0x36) in font "nullfont"
+warning: audience.tex:133:
+Missing character: There is no 5 ("35) in font nullfont!
+warning: could not represent character "5" (0x35) in font "nullfont"
+warning: audience.tex:133: Missing character: There is no 1 ("31) in font nullfont!
+warning: could not represent character "1" (0x31) in font "nullfont"
+warning: audience.tex:147:
+Missing character: There is no 5 ("35) in font nullfont!
+warning: could not represent character "5" (0x35) in font "nullfont"
+warning: audience.tex:147: Missing character: There is no 6 ("36) in font nullfont!
+warning: could not represent character "6" (0x36) in font "nullfont"
+warning: audience.tex:180:
+Missing character: There is no 6 ("36) in font nullfont!
+warning: could not represent character "6" (0x36) in font "nullfont"
+warning: audience.tex:180: Missing character: There is no 1 ("31) in font nullfont!
+warning: could not represent character "1" (0x31) in font "nullfont"
+warning: audience.tex:194:
+Missing character: There is no 6 ("36) in font nullfont!
+warning: could not represent character "6" (0x36) in font "nullfont"
+warning: audience.tex:194: Missing character: There is no 6 ("36) in font nullfont!
+warning: could not represent character "6" (0x36) in font "nullfont"
+warning: audience.tex:223:
+Missing character: There is no 7 ("37) in font nullfont!
+warning: could not represent character "7" (0x37) in font "nullfont"
+warning: audience.tex:223: Missing character: There is no 1 ("31) in font nullfont!
+warning: could not represent character "1" (0x31) in font "nullfont"
+warning: audience.tex:239:
+Missing character: There is no 7 ("37) in font nullfont!
+warning: could not represent character "7" (0x37) in font "nullfont"
+warning: audience.tex:239: Missing character: There is no 6 ("36) in font nullfont!
+warning: could not represent character "6" (0x36) in font "nullfont"
+warning: audience.tex:267: Overfull \hbox (0.82pt too wide) in paragraph at lines 267--267
+warning: audience.tex:267: Overfull \hbox (0.82pt too wide) in paragraph at lines 267--267
+warning: audience.tex:267: Overfull \hbox (0.82pt too wide) in paragraph at lines 267--267
+warning: audience.tex:267: Overfull \hbox (0.82pt too wide) in paragraph at lines 267--267
+warning: audience.tex:267: Overfull \hbox (0.82pt too wide) in paragraph at lines 267--267
+warning: audience.tex:267: Overfull \hbox (0.82pt too wide) in paragraph at lines 267--267
+warning: audience.tex:267: Overfull \hbox (0.82pt too wide) in paragraph at lines 267--267
+warning: audience.tex:267: Overfull \hbox (0.82pt too wide) in paragraph at lines 267--267
+warning: warnings were issued by the TeX engine; use --print and/or --keep-logs for details.

@@ -1,13 +1,14 @@
-# Publisher fills this from the parameterised skeleton when a paper is selected.
 [site]
-repo = "mathesis-papers/paper-template"
+repo = "mathesis-papers/chen-chen-step-m-eulerian-parity-positivity"
+base_url = "https://mathesis-papers.github.io/chen-chen-step-m-eulerian-parity-positivity/"
+# base_url = "https://chen-chen-step-m-eulerian-parity-positivity.papers.trureturing.org/"
 languages = ["zh", "en"]
 [site.title]
-zh = "Mathesis"
-en = "Mathesis"
+zh = "Chen 和 Chen 的奇偶正性猜想的证明：OEIS A392664–A392666 的 COMMENTS 及猜想 2（第 1 页）"
+en = "Proof of Chen and Chen's parity-positivity conjectures: OEIS A392664–A392666, COMMENTS, and Conjecture 2 (p. 1)"
 [trureturing]
 repo = "the-omega-institute/trureturing"
 branch = "dev"
 [books]
-order = []
+order = ["chen-chen-step-m-eulerian-parity-positivity"]
 hide = ["example-*"]

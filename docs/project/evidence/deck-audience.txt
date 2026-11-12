@@ -1,0 +1,443 @@
+  Signs             Sums              Roots
+
+
+
+
+                           Parity, positivity and root growth
+                            Chen and Chen’s step-m Eulerian triangles
+
+
+                                 Haobo Ma1                 Wenlin Zhang1,2
+          1                                    2
+              Chrono AI, Singapore                 National University of Singapore, Singapore
+                             Mathesis manuscript seminar · version 2
+                       Prepared by Mathesis from manuscript version 2; not reviewed by the authors.
+                               Explanations and numerical illustrations are not verification.
+
+
+
+
+H. Ma, W. Zhang                                                Step-m Eulerian triangles              1/19
+  Signs            Sums       Roots
+
+
+ Outline
+
+
+
+          1   The recurrence and its signs
+                The question
+                Two-row propagation
+
+          2   Sums and arithmetic
+                Compressing a row
+                Odd-row nonvanishing
+
+          3   Root growth
+                The dominant columns
+                Boundaries and limits
+
+
+
+H. Ma, W. Zhang                              Step-m Eulerian triangles   2/19
+  Signs           Sums           Roots               The question              Two-row propagation
+
+
+ One row from its two neighbours
+
+          For real m and integers 1 ≤ k ≤ n,
+
+                                 Tm (n, 1) = Tm (n, n) = 1.
+
+          For 1 < k < n only,
+
+                         Tm (n, k) = [m(n − k) + 1]Tm (n − 1, k − 1)
+                                         + [m(k − 1) + 1]Tm (n − 1, k).
+
+          At m = 0: Pascal’s triangle. For negative m, the weights can be
+          negative.
+
+          Question
+          Can every even row still be strictly positive?
+
+
+H. Ma, W. Zhang                                    Step-m Eulerian triangles                         3/19
+  Signs           Sums       Roots            The question              Two-row propagation
+
+
+ The sign pattern holds for real parameters
+
+
+
+
+          Theorem 2.1 (Paper Theorem 1 (thm:main))                WRITTEN PROOF
+
+          For every real r ≥ 3, at step m = −r:
+              T−r (n, k) > 0 for positive even n, 1 ≤ k ≤ n;
+              T−r (n, k) < 0 for odd n ≥ 3, 1 < k < n.
+          Thus the three OEIS conjectures and Chen–Chen Conjecture 2
+          hold for their stated integer parameters.
+
+
+
+
+H. Ma, W. Zhang                             Step-m Eulerian triangles                         4/19
+  Signs           Sums          Roots              The question              Two-row propagation
+
+
+ A finite sign picture
+
+
+
+
+                         Step −3: cyan is positive, magenta negative.
+                  Only the first ten rows are shown; this is an illustration.
+
+H. Ma, W. Zhang                                  Step-m Eulerian triangles                         5/19
+  Signs           Sums         Roots            The question              Two-row propagation
+
+
+ The boundary needs its own lemma
+
+
+
+          Lemma 3.1 (Paper Lemma 2 (lem:second))                 WRITTEN PROOF
+
+          For real r ≥ 3, T−r (n, 2) > 0 whenever n ≥ 2 is even.
+
+          Put an = T−r (n, 2). Eliminating one row gives
+
+                         an+2 = (r − 1)2 an + r(r − 2)n + 2 − r2 .
+
+          The first two even values are a2 = 1 and
+
+                                 a4 = 2r(r − 3) + 3 ≥ 3.
+
+          For n ≥ 4, the forcing term is strictly positive.
+
+
+
+H. Ma, W. Zhang                               Step-m Eulerian triangles                         6/19
+  Signs            Sums        Roots           The question              Two-row propagation
+
+
+ Two rows close the induction
+
+
+
+            1   Start with row 2 = (1, 1).
+            2   Positive even row n plus two negative weights gives a negative
+                odd interior in row n + 1.
+            3   In row n + 2, two negative predecessors and two negative
+                weights give a positive interior.
+            4   Boundaries remain 1. Lemma 2 and reflection handle the two
+                positions next to them.
+
+          The range 3 ≤ k ≤ n is empty when n = 2; the boundary argument
+          still covers the whole next row.
+
+
+
+
+H. Ma, W. Zhang                              Step-m Eulerian triangles                         7/19
+  Signs           Sums        Roots             The question               Two-row propagation
+
+
+ Exactly which integer steps work?
+
+
+
+          Corollary 3.2 (Paper Corollary 3 (cor:classification))
+          WRITTEN PROOF
+          For integer m, every positive even row is entrywise nonnegative iff
+
+                                 m ≤ −3     or m ≥ 0.
+
+          For exactly these parameters all positive even rows are strictly
+          positive.
+
+          For m ≥ 0 both weights are positive. The remaining integers fail at
+
+            Tm (4, 2) = Tm (4, 3) = 2m2 + 6m + 3 = −1                     (m = −1, −2).
+
+
+
+H. Ma, W. Zhang                               Step-m Eulerian triangles                          8/19
+  Signs           Sums        Roots                 Compressing a row           Odd-row nonvanishing
+
+
+ Add a row, or alternate its signs
+
+
+
+          Corollary 4.1 (Paper Corollary 4 (cor:sums))                 WRITTEN PROOF
+
+          For every real m,
+
+                              ∑
+                              n                   ∏
+                                                  n−2
+                   Sn (m) =         Tm (n, k) =         (mj + 2),             S1 = 1.
+                              k=1                 j=0
+
+          For even n, Rm,n (−1) = 0, and the odd-position and even-position
+          sums both equal Sn /2.
+
+          Each old entry gets the same total weight m(n − 2) + 2. Mirror
+          pairs cancel at y = −1.
+
+
+
+H. Ma, W. Zhang                                   Step-m Eulerian triangles                            9/19
+  Signs           Sums        Roots             Compressing a row            Odd-row nonvanishing
+
+
+ Positive coeﬀicients give a root annulus
+
+
+
+          Corollary 4.2 (Paper Corollary 5 (cor:annulus))                 WRITTEN PROOF
+
+          For real m ≤ −3, even n ≥ 2, every root z of Rm,n satisfies
+
+                                      Ln ≤ |z| ≤ Un ,
+
+          where Ln and Un are the minimum and maximum of
+          Tm (n, k)/Tm (n, k + 1), 1 ≤ k < n. All ratios are positive and
+          Ln Un = 1.
+
+          Eneström–Kakeya: rescale coeﬀicients to be monotone, then use
+          the triangle inequality. See Kakeya (1912), reference 7 in the book.
+
+
+
+
+H. Ma, W. Zhang                               Step-m Eulerian triangles                             10/19
+  Signs           Sums        Roots            Compressing a row         Odd-row nonvanishing
+
+
+ Oddness and congruences prevent zero
+
+
+
+          Let Aq (m) = Rm,2q+1 (−1), with A0 (m) = 1.
+
+          Corollary 5.1 (Paper Corollary 6 (cor:odd))          WRITTEN PROOF
+
+          For every integer q ≥ 1,
+
+                    Aq (−4)/8q is odd,      Aq (−5) ≡ 1 (mod 3).
+
+          The first holds with (−4, 8) replaced by (−r, 2r) for every positive
+          integer 4 | r; the second holds for every integer m ≡ 1 (mod 3).
+          Both source assertions therefore hold for all odd rows.
+
+
+
+
+H. Ma, W. Zhang                              Step-m Eulerian triangles                          11/19
+  Signs           Sums          Roots                Compressing a row         Odd-row nonvanishing
+
+
+ One generating function packages every row
+
+
+          The polynomial recurrence is
+
+                         Rm,n+1 (y) = [1 + (m(n − 1) + 1)y]Rm,n (y)
+                                        + my(1 − y)R′m,n (y).
+
+          At m = −r and y = −1 it yields
+                              ∑                t2q
+                                    Aq (−r)         = cosh(rt)2/r .
+                                              (2q)!
+                              q≥0
+
+
+              Even-block partitions: after normalization, only pair partitions
+              remain odd when 4 | r.
+              Modulo 3: reduce to m = 1 and evaluate at y = −1.
+
+
+H. Ma, W. Zhang                                    Step-m Eulerian triangles                          12/19
+  Signs            Sums      Roots            The dominant columns          Boundaries and limits
+
+
+ Most parameters have a linear limit
+
+
+
+
+          Theorem 6.1 (Paper Theorem 7 (thm:growth))                    WRITTEN PROOF
+
+          For every real m > 0 and every real r ≥ 4,
+
+                   Mn (m)        2               Mn (−r)         2
+                           −→          ,                  −→          .
+                  (m + 1)n    m(m + 1)           (r − 1)n    r(r − 1)
+
+          In particular Mn (−4)/3n → 1/6 and Mn (−5)/4n → 1/10.
+
+          Here Mn (m) is the largest root modulus, n ≥ 2.
+
+
+
+
+H. Ma, W. Zhang                             Step-m Eulerian triangles                               13/19
+  Signs           Sums        Roots            The dominant columns          Boundaries and limits
+
+
+ Step −3 lives on a different scale
+
+
+
+
+          Theorem 6.1 (Paper Theorem 7 (thm:growth))                     WRITTEN PROOF
+
+                   Mn (−3)     1            log Mn (−3)
+                      n/2
+                           −→ √ ,                       −→ 12 log 5.
+                    5          45                n
+          Consequently Mn (−3)/2n → ∞. The proposed growth invariance
+          between steps 1 and −3 fails.
+
+          The limiting equation is z2 + (−1)n /45, rather than a linear
+          equation.
+
+
+
+
+H. Ma, W. Zhang                              Step-m Eulerian triangles                               14/19
+  Signs           Sums         Roots           The dominant columns       Boundaries and limits
+
+
+ Why the largest root is controlled
+
+
+          Write aj (n) = Tm (n, j + 1). Reflection also makes this a leading
+          coeﬀicient.
+                               2(m + 1)n−1       2
+                    a1 (n) =               −n+1−                    (m ̸= 0).
+                                   m             m
+          A path bound controls all remaining columns. After scaling:
+              ordinary ranges: the nonzero root equation approaches z + c
+              or z + (−1)n c;
+              step −3: the third column survives, giving a quadratic;
+              Rouché’s theorem finds roots near the limiting zeros;
+              the same uniform tail estimate excludes exterior roots.
+
+
+
+H. Ma, W. Zhang                              Step-m Eulerian triangles                            15/19
+  Signs           Sums         Roots            The dominant columns      Boundaries and limits
+
+
+ The excluded steps have unit-modulus roots
+
+
+
+          Corollary 6.2 (Paper Corollary 8 (cor:boundaryroots))
+          WRITTEN PROOF
+          For q ≥ 1,
+
+                         R−1,2q = R−2,2q = (1 − y)2q−2 (1 + y),
+                                R−1,2q+1 = (1 − y)2q−2 (1 + y2 ),
+                                R−2,2q+1 = (1 − y)2q .
+
+          Thus Mn (−1) = Mn (−2) = 1 for n ≥ 2; both growth exponents
+          are zero. Also R0,n = (1 + y)n−1 .
+
+
+
+
+H. Ma, W. Zhang                               Step-m Eulerian triangles                           16/19
+  Signs           Sums         Roots            The dominant columns      Boundaries and limits
+
+
+ Positive coeﬀicients need not mean real roots
+
+
+
+          Corollary 6.2 (Paper Corollary 8 (cor:boundaryroots))
+          WRITTEN PROOF
+          For real m > 0 and n ≥ 2, all roots are simple and negative. At
+          m = −3, nonreal roots occur already in row 6.
+
+
+                  R−3,6 (y) = (y + 1)(y4 + 16y3 + 246y2 + 16y + 1).
+          For real y ̸= 0, the quartic divided by y2 is
+
+                               (y + y−1 + 8)2 + 180 > 0.
+
+          Its four roots are nonreal.
+
+
+H. Ma, W. Zhang                               Step-m Eulerian triangles                           17/19
+  Signs           Sums       Roots             The dominant columns      Boundaries and limits
+
+
+ What this manuscript does not establish
+
+
+
+
+              All-row reality of the roots at steps −4, −5 is not covered.
+              Remaining complex-parameter asymptotics are not covered.
+              A fixed positive inner radius cannot contain all scaled zeros:
+              the even-row root −1 scales toward zero.
+              Finite plots and reported tightness percentages are separate
+              numerical claims.
+
+          The finite-row annulus remains valid. The growth theorem
+          concerns the largest modulus, not every scaled root.
+
+
+
+
+H. Ma, W. Zhang                              Step-m Eulerian triangles                           18/19
+  Signs            Sums       Roots            The dominant columns      Boundaries and limits
+
+
+ A recurrence, three kinds of information
+
+
+
+            1   Two-row induction explains the signs.
+            2   Summation and arithmetic explain cancellation and
+                nonvanishing.
+            3   Dominant columns explain the exceptional root scale.
+
+          This book contains eight written-proof results and no exact Lean
+          citations for them. The frozen integer even-row theorem is a
+          specialization, not the full real-parameter result. Sources:
+          manuscript version 2, its seven-entry bibliography, and the book’s
+          claim comparison at 2a8e85703420.
+
+
+
+
+H. Ma, W. Zhang                              Step-m Eulerian triangles                           19/19
+ Formal verification
+       Result                        GID (pinned Lean source)                             Status
+       Theorem 2.1                   No GID (written proof)                               WRITTEN PROOF
+
+       Lemma 3.1                     No GID (written proof)                               WRITTEN PROOF
+
+       Corollary 3.2                 No GID (written proof)                               WRITTEN PROOF
+
+       Corollary 4.1                 No GID (written proof)                               WRITTEN PROOF
+
+       Corollary 4.2                 No GID (written proof)                               WRITTEN PROOF
+
+       Corollary 5.1                 No GID (written proof)                               WRITTEN PROOF
+
+       Theorem 6.1                   No GID (written proof)                               WRITTEN PROOF
+
+       Corollary 6.2                 No GID (written proof)                               WRITTEN PROOF
+
+
+
+
+       Pinned source: 2a8e85703420
+H. Ma, W. Zhang                                               Step-m Eulerian triangles               Appendix
+

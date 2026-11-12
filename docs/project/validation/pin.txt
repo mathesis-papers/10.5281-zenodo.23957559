@@ -1,0 +1,65 @@
+trureturing pin: `8a24ea4e79de` → `2a8e85703420`
+
+**Removed:**
+
+- `D5/S0/Carrier/Conj.trace`
+- `D5/S0/Carrier/Ring.GoldenInt`
+- `D5/S0/Carrier/Ring.phi`
+- `D5/S0/Carrier/Ring.phi_sq`
+- `D5/S0/Certificates/DetlefsRoughResidueCharacterizationRefutation.result`
+- `D5/S0/Certificates/GreathouseLogTwoFloorRefutation.result`
+- `D5/S0/Certificates/RationalFarkas.infeasible_of_certificate`
+- `D5/S0/Computability/FiniteCounterexampleCertificate.finite_readout_counterexample_certificate`
+- `D5/S0/Diagonal/PigeonholeFiber.finite_reading_has_fiber`
+- `D5/S1/Deficit/AlmostAdditivity.lambdaMinus_almost_additive`
+- `D5/S1/Deficit/ChargedCarryPath.charged_normal_form_unique`
+- `D5/S1/Deficit/ChargedCarryPath.deficit_eq_beattyDeficit`
+- `D5/S1/Deficit/DeficitInteger.betaContraction`
+- `D5/S1/Deficit/DeficitInteger.deficit`
+- `D5/S1/Deficit/DeficitInteger.deficit_integer`
+- `D5/S1/Deficit/DeficitThreeValued.deficit_three_valued`
+- `D5/S1/Deficit/DoubleFaceLength.betaReal_sub_betaContraction`
+- `D5/S1/Deficit/FixedModulusNoncongruence.deficit_not_determined_by_fixed_modulus`
+- `D5/S1/Deficit/GoldenCarryLedger.carry_rewrite_face_invariant`
+- `D5/S1/Deficit/GoldenPhaseDeficit.golden_phase_deficit`
+- `D5/S1/Deficit/GoldenPhaseDistribution.limiting_deficit_distribution`
+- `D5/S1/Digit/Addition.rawValue_toRaw_Z`
+- `D5/S1/Digit/Addition.zeck_add`
+- `D5/S1/Digit/Carry.rawValue_carryStep`
+- `D5/S1/Digit/CarryStepConfluence.carryStep_confluent`
+- `D5/S1/Digit/Normalize.canonicalRaw_unique`
+- `D5/S1/Digit/Raw.CanonicalRaw`
+- `D5/S1/Digit/Raw.rawValue`
+- `D5/S1/Recurrence/FibVajda.fib_vajda`
+- `D5/S1/Recurrence/FibonacciPowerSumMod16Obstruction.fib_mod_sixteen_period`
+- `D5/S1/Recurrence/GoldenFibDivisibility.fib_dvd_iff`
+- `D5/S1/Scale/FibLucasDouble.golden_fib_two_mul_eq_fib_mul_lucas`
+- `D5/S1/Scale/Fibonacci.fib_cassini_from_golden_norm`
+- `D5/S1/Scale/Fibonacci.golden_phi_pow_eq_fib_pair`
+- `D5/S1/Scale/FibonacciErrorRatio.fibonacci_golden_residual`
+- `D5/S1/Scale/Lucas.goldenLucas`
+- `D5/S1/Scale/Lucas.golden_lucas_discriminant`
+- `D5/S1/Scale/Lucas.golden_lucas_succ_eq_fib_add_fib`
+- `D5/S1/Words/Expansions/BasePhiNegativeBridge.betaContraction_mem_window`
+- `D5/S1/Words/GoldenFactorComplexity.golden_factor_complexity`
+- `D5/S1/Words/GoldenWord.goldenWord`
+- `D5/S1/Words/GoldenWord.goldenWord_char_zeckendorf`
+- `D5/S1/Words/ZeckendorfOrder.zeckendorf_lex_iff_lt`
+- `D5/S3/Arith/Robin/FibonacciRankEulerTail.fibonacci_lt_two_pow`
+- `D5/S3/ConceptDynamics/ConceptJoinUniversal.Refines`
+- `D5/S3/ConceptDynamics/ConceptJoinUniversal.concept_join_universal`
+- `D5/S3/ConceptDynamics/Information/EqualEntropyTargetValueContrast.equal_entropy_target_value_contrast`
+- `D5/S3/ConceptDynamics/Information/RefinementEntropyMonotonicity.refinement_information_residual_monotone`
+- `D5/S3/ConceptDynamics/Restoration/TargetRecoveryCriterion.target_recovery_criterion`
+- `D5/S3/ConceptDynamics/TargetRisk/MaximumFactorCompatibleSubdomain.maximum_factor_compatible_subdomain`
+- `D5/S3/ConceptDynamics/TargetRisk/RefinementRiskCostTradeoff.refinementCost`
+- `D5/S3/ConceptDynamics/TargetRisk/RefinementRiskCostTradeoff.refinement_reduces_target_risk_and_raises_cost`
+- `D5/S3/ConceptDynamics/TargetRisk/RefinementRiskCostTradeoff.targetRisk`
+- `D5/S3/Entropy/Forgetting/DeterministicEntropyEquality.pushforward_entropy_eq_iff_injective_on_support`
+- `D5/S3/ObserverMemory/GoldenRevivalScore.golden_fibonacci_revival_score_tendsto`
+- `D5/S3/ObserverMemory/TwoTimeKnowledge.Forgot`
+- `D5/S3/ObserverMemory/TwoTimeKnowledge.Knows`
+- `D5/S3/ObserverMemory/TwoTimeKnowledge.forgot_iff_later_fiber_counterexample`
+- `D5/S3/ObserverMemory/TwoTimeKnowledge.knows_of_later_readout_factors_through_earlier`
+
+wrote trureturing.lock.json at 2a8e85703420116c8f07e1eebebd34fa221c8d55

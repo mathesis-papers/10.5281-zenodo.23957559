@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="zh-CN" data-title-en="STEP//SIGNS · Two rows bring the signs back">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>STEP//SIGNS 两行之后，符号回来</title>
+<meta name="description" content="两行之后，符号回来 · Two rows bring the signs back">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/theme.css">
+<link rel="stylesheet" href="style.css">
+<script src="../assets/shell.js"></script>
+<script src="../assets/kit.js"></script>
+</head>
+<body data-viz-id="step-triangle">
+<div class="app lab" id="app">
+  <header class="top">
+    <div class="brand">
+      <a class="crumb" href="../"><span class="zh">◂ 可视化索引</span><span class="en">◂ Visualizations</span></a>
+      <h1 class="logo" data-text="STEP//SIGNS">STEP<b>//</b>SIGNS</h1>
+      <div class="tagline"><span class="zh">负权重也能让偶数行全为正</span><span class="en">Negative weights can still give positive even rows</span></div>
+    </div>
+    <div class="status" aria-live="polite">
+      <span class="pill" id="pillAngle">m <strong>—</strong></span>
+      <span class="pill hot" id="pillSum"><span class="zh">当前行</span><span class="en">ROW</span> <strong>1</strong></span>
+      <div class="langs" role="group" aria-label="语言 Language"><button data-lang-set="zh" aria-pressed="true">中</button><button data-lang-set="en" aria-pressed="false">EN</button></div>
+    </div>
+  </header>
+
+  <aside class="col deck" aria-label="实验控制" data-aria-en="Experiment controls">
+    <section class="panel sec">
+      <h2><span class="zh">实验卡带</span><span class="en">Experiments</span><span class="aside">PRESETS</span></h2>
+      <div class="presets cards" id="presets">
+        <button class="preset" data-preset="even" aria-pressed="false"><span class="code">EVEN</span><span class="cn zh">−3：第 6 行</span><span class="cn en">−3: row 6</span></button>
+        <button class="preset" data-preset="odd" aria-pressed="false"><span class="code">ODD</span><span class="cn zh">−3：第 5 行</span><span class="cn en">−3: row 5</span></button>
+        <button class="preset" data-preset="excluded" aria-pressed="false"><span class="code">EXCLUDED</span><span class="cn zh">−1：第 4 行</span><span class="cn en">−1: row 4</span></button>
+        <button class="preset" data-preset="pascal" aria-pressed="false"><span class="code">PASCAL</span><span class="cn zh">0：第 6 行</span><span class="cn en">0: row 6</span></button>
+      </div>
+      <p class="note" id="presetNote"></p>
+    </section>
+    <section class="panel sec">
+      <h2><span class="zh">步长</span><span class="en">Step</span><span class="aside">m</span></h2>
+      <div class="field"><label for="step"><span class="zh">步长 m</span><span class="en">Step m</span><small class="zh">点击格子读取精确位置</small><small class="en">click a cell to read its position</small></label><output id="oStep" for="step">−3</output>
+      <input type="range" id="step" min="-8" max="3" step="0.25" value="-3"></div>
+    </section>
+  </aside>
+
+  <main class="center">
+    <div class="stage still" id="stage" data-thumb aria-label="步长三角形，颜色区分正、负、零；点击格子查看数值" data-aria-en="A step triangle: colours distinguish positive, negative and zero; click cells for values">
+      <canvas class="fill" id="cv"></canvas>
+      <div class="scan"></div><div class="vig"></div>
+      <span class="bracket tl"></span><span class="bracket tr"></span><span class="bracket bl"></span><span class="bracket br"></span>
+      <div class="hud-tl"><span class="big" id="hudBig"></span><span class="sub" id="hudSub"></span></div>
+      <div class="hud-bl">
+        <span><i class="sw cy"></i><span class="zh">正</span><span class="en">positive</span></span>
+        <span><i class="sw mg"></i><span class="zh">负</span><span class="en">negative</span></span>
+        <span><i class="sw" style="background:var(--dim)"></i><span class="zh">零</span><span class="en">zero</span></span>
+        <span><i class="sw am"></i><span class="zh">当前项</span><span class="en">current cell</span></span>
+      </div>
+      <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    </div>
+    <div class="tour" id="tour">
+      <button class="tbtn" data-tour="prev" aria-label="上一个实验" data-aria-en="Previous experiment">◀</button>
+      <div class="what"></div>
+      <button class="tbtn" data-tour="next" aria-label="下一个实验" data-aria-en="Next experiment">▶</button>
+    </div>
+    <div class="strip">
+      <section class="panel">
+        <div class="head"><h2><span class="zh">每行正负项数</span><span class="en">Positive and negative counts by row</span></h2><span id="plotMeta"></span></div>
+        <canvas id="plot" aria-label="各行正项与负项的个数" data-aria-en="Counts of positive and negative entries by row"></canvas>
+      </section>
+    </div>
+  </main>
+
+  <aside class="col side" aria-label="读数与依据" data-aria-en="Readouts and evidence">
+    <section class="panel sec" id="readouts" aria-live="polite">
+      <h2><span class="zh">读数</span><span class="en">Readouts</span><span class="aside">T(n,k)</span></h2>
+      <dl class="ro">
+        <div class="key"><dt><span class="zh">当前项</span><span class="en">Current cell</span></dt><dd><b id="roSum">—</b><span id="roSumSub"></span></dd></div>
+        <div class="c"><dt><span class="zh">当前行正项数</span><span class="en">Positive in row</span></dt><dd id="roCos">—</dd></div>
+        <div class="m"><dt><span class="zh">当前行负项数</span><span class="en">Negative in row</span></dt><dd id="roSin">—</dd></div>
+      </dl>
+      <p class="note" id="roNote"></p>
+    </section>
+    <section class="panel sec" id="evidence">
+      <h2><span class="zh">依据</span><span class="en">Evidence</span><span class="aside">trureturing</span></h2>
+      <div class="lean argued"><span class="ok">ARGUED</span><span><span class="zh">手稿定理 1 与推论 3 的书面论证；本书未为这些完整陈述引用 Lean 定理。</span><span class="en">Written arguments of manuscript Theorem 1 and Corollary 3; no Lean theorem is cited for these complete statements.</span></span></div>
+      <div class="lean num"><span class="ok">NUM</span><span><span class="zh">图示仅计算前 10 行，使用双精度；这是例示，不是证明。零值按实际计算结果判断。</span><span class="en">Only the first 10 rows are computed, in double precision: an illustration, not a proof. Zero means a computed zero.</span></span></div>
+      <button class="chip" id="infoBtn"><span class="zh">理论接口 DATA SHARD</span><span class="en">DATA SHARD · theory</span></button>
+    </section>
+  </aside>
+
+  <footer class="rail" id="rail">
+    <div class="transport">
+      <button class="tbtn" id="rew" aria-label="回到起点" data-aria-en="Back to the start">⏮</button>
+      <button class="tbtn" id="play" aria-label="播放 / 暂停" data-aria-en="Play / pause" aria-pressed="false">▶</button>
+      <span class="chips" id="speedChips" role="group" aria-label="播放速度" data-aria-en="Playback speed">
+        <button class="chip" data-speed="0.35" aria-pressed="false">0.35×</button><button class="chip" data-speed="1" aria-pressed="true">1×</button><button class="chip" data-speed="2.5" aria-pressed="false">2.5×</button>
+      </span>
+    </div>
+    <div class="clock">
+      <span class="tau" id="tau"></span>
+      <input type="range" id="now" min="1" max="10" step="any" value="6" aria-label="当前行" data-aria-en="Current row">
+    </div>
+    <div class="keys">
+      <kbd>Space</kbd> <span class="zh">播放</span><span class="en">play</span> · <kbd>←</kbd><kbd>→</kbd> <span class="zh">每次一行</span><span class="en">one row at a time</span>
+    </div>
+  </footer>
+</div>
+
+<div class="drawer" id="drawer" hidden>
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="drawerTitle">
+    <div class="row"><h2 id="drawerTitle"><span class="zh">理论接口 · 这个页面在演示什么</span><span class="en">Theory interface · what this page shows</span></h2><button class="chip" id="drawerClose"><span class="zh">关闭 Esc</span><span class="en">Close Esc</span></button></div>
+    <div class="zh"><p class="lede">每个圆是三角形的一项。改变步长，或沿时间轴换行；点击圆读取该项。图中前 10 行是按原递推算出的例示，不是证明。</p><ol><li>依据：本书<a href="../../zh/ch01-recurrence.html#paper-thm-main" target="_top">定理 1</a>及<a href="../../zh/ch02-signs.html#paper-cor-classification" target="_top">推论 3</a>，均有手稿书面证明。</li><li>青色为正，品红为负，灰色为零。琥珀色只圈出当前项。圆大小不表示数值大小。</li><li>范围为 −8 ≤ m ≤ 3，按 0.25 步进；行号 1 到 10。有限图示不证明无限多行，也不覆盖复参数或根渐近。</li></ol></div>
+    <div class="en"><p class="lede">Each circle is one triangle entry. Vary the step, scrub the row rail, or click a cell to read its value. These first 10 computed rows are an illustration, not a proof.</p><ol><li>Sources: <a href="../../en/ch01-recurrence.html#paper-thm-main" target="_top">Theorem 1</a> and <a href="../../en/ch02-signs.html#paper-cor-classification" target="_top">Corollary 3</a>, both with manuscript written proofs.</li><li>Cyan is positive, magenta negative, grey zero. Amber rings only the current cell. Circle size does not encode magnitude.</li><li>Steps range from −8 to 3 in increments of 0.25; rows from 1 to 10. A finite picture establishes neither infinitely many rows nor complex-parameter or root asymptotics.</li></ol></div>
+  </div>
+</div>
+<script src="main.js"></script>
+</body>
+</html>

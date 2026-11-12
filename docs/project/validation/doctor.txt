@@ -1,0 +1,45 @@
+tbook doctor · toolchain
+  ✓ Python 3.15.0
+  ! virtualenv .venv  — absent: ./tbook uses python3 from PATH
+      fix: python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
+  ✓ trureturing.lock.json (2a8e85703420, 0 declarations)  — the-omega-institute/trureturing
+  ✓ trureturing access  — git checkout /Users/lexa/Desktop/lexa/omega/trureturing
+  ✓ pinned commit 2a8e85703420 on the-omega-institute/trureturing@dev  — ancestor of origin/dev in /Users/lexa/Desktop/lexa/omega/trureturing (cached)
+  ✗ pypandoc (Pandoc)  — Python package pypandoc_binary not installed
+      fix: pip install -r requirements.txt
+  ✗ typst (Python module)  — not installed
+      fix: pip install -r requirements.txt
+  ! epubcheck  — not installed: EPUBs are built but not validated
+      fix: pip install -r requirements.txt
+  ! Java (The operation couldn’t be completed. Unable to locate a Java Runtime.)  — The operation couldn’t be completed. Unable to locate a Java Runtime.
+Please visit http://www.java.com for information on installing Java.
+      fix: sudo apt-get install default-jre-headless
+  ✗ mdBook  — not on PATH, MDBOOK unset
+      fix: cargo install mdbook --version 0.5.4 --locked  (or set MDBOOK=/path/to/mdbook)
+  ✓ Node.js 26.3.0
+  ✓ node_modules/katex 0.18.10
+  ✓ node_modules/@slidev/cli 53.0.0
+  ✓ node_modules/playwright-chromium 1.56.1
+  ✓ Chromium (Playwright)  — /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+  ✓ Tectonic 0.16.9  — /opt/homebrew/bin/tectonic
+  ✓ ffmpeg  — /opt/homebrew/bin/ffmpeg
+  ✓ WebGL for solid shots (films)  — WebGL 2.0 (OpenGL ES 3.0 Chromium) · ANGLE (Apple, ANGLE Metal Renderer: Apple M2 Pro, Unspecified Version)
+  ! font Noto CJK SC  — not installed: PDF/EPUB fall back to other fonts
+      fix: sudo apt-get install fonts-noto-cjk  (or ./tools/fetch-fonts.sh)
+  ! font Chakra Petch  — not installed: PDF/EPUB fall back to other fonts
+      fix: ./tools/fetch-fonts.sh
+  ! font JetBrains Mono  — not installed: PDF/EPUB fall back to other fonts
+      fix: sudo apt-get install fonts-jetbrains-mono  (or ./tools/fetch-fonts.sh)
+  ✓ elan / lake  — /Users/lexa/.elan/bin/lake
+targets
+  ✓ check
+  ✗ html: mdBook
+  ✗ pdf: virtualenv .venv, pypandoc (Pandoc), typst (Python module), font Noto CJK SC, font Chakra Petch, font JetBrains Mono
+  ✗ epub: virtualenv .venv, pypandoc (Pandoc), epubcheck, Java (The operation couldn’t be completed. Unable to locate a Java Runtime.), font Noto CJK SC, font Chakra Petch, font JetBrains Mono
+  ✗ site: mdBook, virtualenv .venv, pypandoc (Pandoc), typst (Python module), font Noto CJK SC, font Chakra Petch, font JetBrains Mono, epubcheck, Java (The operation couldn’t be completed. Unable to locate a Java Runtime.)
+  ! slides (optional): font Noto CJK SC, font Chakra Petch, font JetBrains Mono
+  ✓ viz (optional)
+  ! films (optional): font Noto CJK SC, font Chakra Petch, font JetBrains Mono
+  ✓ lean-verify (optional)
+books: chen-chen-step-m-eulerian-parity-positivity; hidden by site.toml [books].hide: example-monograph, example-primer
+result: 3 required item(s) missing, 6 optional

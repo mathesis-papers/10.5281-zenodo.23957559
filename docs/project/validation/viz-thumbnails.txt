@@ -1,0 +1,9 @@
+chen-chen-step-m-eulerian-parity-positivity/step-triangle → books/chen-chen-step-m-eulerian-parity-positivity/viz/step-triangle/thumb.jpg
+chen-chen-step-m-eulerian-parity-positivity/step-triangle [even · en] → books/chen-chen-step-m-eulerian-parity-positivity/viz/step-triangle/fig-even.en.jpg
+chen-chen-step-m-eulerian-parity-positivity/step-triangle [odd · en] → books/chen-chen-step-m-eulerian-parity-positivity/viz/step-triangle/fig-odd.en.jpg
+chen-chen-step-m-eulerian-parity-positivity/step-triangle [excluded · en] → books/chen-chen-step-m-eulerian-parity-positivity/viz/step-triangle/fig-excluded.en.jpg
+chen-chen-step-m-eulerian-parity-positivity/step-triangle [pascal · en] → books/chen-chen-step-m-eulerian-parity-positivity/viz/step-triangle/fig-pascal.en.jpg
+chen-chen-step-m-eulerian-parity-positivity/step-triangle [even · zh] → books/chen-chen-step-m-eulerian-parity-positivity/viz/step-triangle/fig-even.zh.jpg
+chen-chen-step-m-eulerian-parity-positivity/step-triangle [odd · zh] → books/chen-chen-step-m-eulerian-parity-positivity/viz/step-triangle/fig-odd.zh.jpg
+chen-chen-step-m-eulerian-parity-positivity/step-triangle [excluded · zh] → books/chen-chen-step-m-eulerian-parity-positivity/viz/step-triangle/fig-excluded.zh.jpg
+chen-chen-step-m-eulerian-parity-positivity/step-triangle [pascal · zh] → books/chen-chen-step-m-eulerian-parity-positivity/viz/step-triangle/fig-pascal.zh.jpg

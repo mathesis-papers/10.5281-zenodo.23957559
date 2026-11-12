@@ -1,0 +1,23 @@
+{
+  "id": "chen-chen-step-m-eulerian-parity-positivity",
+  "revision": 2,
+  "problem_ids": [
+    "chen-chen-step-m-eulerian-parity-positivity"
+  ],
+  "topic": "Chen and Chen's even-row parity-positivity conjectures for the step-m Eulerian triangle",
+  "title": "Proof of Chen and Chen's parity-positivity conjectures: OEIS A392664–A392666, COMMENTS, and Conjecture 2 (p. 1)",
+  "creators": [
+    {
+      "name": "Ma, Haobo",
+      "affiliation": "ChronoAI Pte Ltd, Singapore"
+    },
+    {
+      "name": "Zhang, Wenlin",
+      "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore"
+    }
+  ],
+  "abstract": "We prove Conjecture 2 on page 1 of Chen and Chen's January 2026 executive summary and the parity-positivity conjectures in OEIS A392664–A392666, COMMENTS: every positive even row is strictly positive for real m <= -3. We also prove the odd-row alternating-sum nonvanishing assertions at m = -4 and -5. The largest root modulus satisfies M_n(-3) ~ 5^(n/2)/sqrt(45), correcting the stated exponent log(2) to log(5)/2 and the proposed scaling constant 1/3. The constants 1/6 and 1/10 at steps -4 and -5 are proved. Companion identities, the integer-step sign classification and boundary cases have written proofs.",
+  "summary": "Written proofs cover real-parameter even-row positivity, odd-row signs and nonvanishing, exact root asymptotics for m > 0, m = -3 and m <= -4, degenerate-step factorizations and the integer sign classification. Exact finite checks cover 14 integer steps through row 400, degenerate steps through row 400 and six rational steps through row 60.",
+  "license": "cc-by-4.0",
+  "evidence_url": "https://github.com/the-omega-institute/trureturing/blob/66a0495cbdf1bb9b42d715c1b3cd3365862896fa/D5/S1/Recurrence/Algebraic/ChenChenParityPositivity.lean"
+}

@@ -1,0 +1,8 @@
+{
+  "scope": "readable task logs only; trailing whitespace and blank EOF normalized; mathematical/catalog/frozen inputs untouched",
+  "files": [
+    "docs/project/validation/build-slides.txt",
+    "docs/project/evidence/deck-audience-build.log",
+    "docs/project/evidence/deck-notes-build.log"
+  ]
+}
