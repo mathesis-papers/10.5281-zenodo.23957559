@@ -1,0 +1,55 @@
+.......................s.s.......ss....ss............................................s....created books/demo/slides/new-talk (academic; en, zh)
+film bk/001-golden-deficit: rendering (key 37dbe4329852)
+  cache: films bk/001-golden-deficit is up to date (37dbe4329852)
+..........................................................................................................................................................ssssssss.s.ss......s.s..........sss.......Mathesis post-build skipped: layer script is absent from repository being built
+Mathesis post-build skipped: layer script is absent from repository being built
+.sss.............................s.sss..........s.s..s.............sssssss.ss..s..s.....sss.s.......s..s..........s..s...............................sssssss..s...............s.s..........s........s..s..s....s....s.ss.s....s......s....ss....................................s.........................ssssssssss.......s....ssssssss........ssss  warning: test-book/en: ids of headings with math follow their TeX, not the HTML edition, so links to them may not resolve (KaTeX unavailable: katex-render: the pinned katex package is not installed; run `npm ci` in the repository root)
+  warning: test-book/en/part/a1.md: link to ../nope.md, which is not a chapter of this edition; kept as text
+................  warning: test-book/en: ids of headings with math follow their TeX, not the HTML edition, so links to them may not resolve (KaTeX unavailable: katex-render: the pinned katex package is not installed; run `npm ci` in the repository root)
+  warning: test-book/en/part/a1.md: link to ../nope.md, which is not a chapter of this edition; kept as text
+...sss.ssssssssssssssssssssssss..................sssss....................Mathesis post-build skipped: mapped book 'chen-chen-step-m-eulerian-parity-positivity' is absent from site manifest
+.Mathesis post-build skipped: mapped book 'chen-chen-step-m-eulerian-parity-positivity' is absent from site manifest
+.sMathesis post-build skipped: mapped book 'chen-chen-step-m-eulerian-parity-positivity' is absent from site manifest
+.Mathesis post-build skipped: mapped book 'chen-chen-step-m-eulerian-parity-positivity' is absent from site manifest
+.Mathesis post-build skipped: mapped book 'chen-chen-step-m-eulerian-parity-positivity' is absent from site manifest
+..Mathesis post-build skipped: mapped book 'chen-chen-step-m-eulerian-parity-positivity' is absent from site manifest
+.Mathesis post-build skipped: mapped book 'chen-chen-step-m-eulerian-parity-positivity' is absent from site manifest
+Mathesis post-build skipped: mapped book 'chen-chen-step-m-eulerian-parity-positivity' is absent from site manifest
+.Mathesis post-build skipped: mapped book 'chen-chen-step-m-eulerian-parity-positivity' is absent from site manifest
+Mathesis post-build skipped: mapped book 'chen-chen-step-m-eulerian-parity-positivity' is absent from site manifest
+.Mathesis post-build skipped: mapped book 'chen-chen-step-m-eulerian-parity-positivity' is absent from site manifest
+.Mathesis post-build skipped: mapped book 'chen-chen-step-m-eulerian-parity-positivity' is absent from site manifest
+.Mathesis post-build skipped: mapped book 'chen-chen-step-m-eulerian-parity-positivity' is absent from site manifest
+Mathesis post-build skipped: mapped book 'chen-chen-step-m-eulerian-parity-positivity' is absent from site manifest
+.sMathesis post-build skipped: mapped book 'chen-chen-step-m-eulerian-parity-positivity' is absent from site manifest
+.sMathesis post-build skipped: mapped book 'chen-chen-step-m-eulerian-parity-positivity' is absent from site manifest
+.Mathesis post-build skipped: mapped book 'chen-chen-step-m-eulerian-parity-positivity' is absent from site manifest
+....................s...........s.s...........sssssssssss........ss...................................................................................sF.F............................................................sssssssss.ss.......ssssssss...s.....ss...s.s.............sssssssss.......ss.......
+======================================================================
+FAIL: test_release_attaches_the_build_cache_and_publishes_a_complete_draft (test_verification.BuildCacheWorkflowTests.test_release_attaches_the_build_cache_and_publishes_a_complete_draft)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/lexa/Desktop/lexa/omega/mathesis-paper-chen-chen/tools/tests/test_verification.py", line 1465, in test_release_attaches_the_build_cache_and_publishes_a_complete_draft
+    self.check_publish("release.yml", env, files, "")
+  File "/Users/lexa/Desktop/lexa/omega/mathesis-paper-chen-chen/tools/tests/test_verification.py", line 1426, in check_publish
+    self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+AssertionError: 127 != 0 : /var/folders/jd/5x6vvk8d4yzcmtmp7mjw_9nw0000gn/T/tbook-build-cache-znowmled/.step.sh: line 7: mapfile: command not found
+
+
+======================================================================
+FAIL: test_template_release_attaches_the_example_site_cache (test_verification.BuildCacheWorkflowTests.test_template_release_attaches_the_example_site_cache)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/lexa/Desktop/lexa/omega/mathesis-paper-chen-chen/tools/tests/test_verification.py", line 1490, in test_template_release_attaches_the_example_site_cache
+    self.check_publish("template-release.yml", env, files, " --latest")
+  File "/Users/lexa/Desktop/lexa/omega/mathesis-paper-chen-chen/tools/tests/test_verification.py", line 1426, in check_publish
+    self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+AssertionError: 127 != 0 : /var/folders/jd/5x6vvk8d4yzcmtmp7mjw_9nw0000gn/T/tbook-build-cache-ng8kjh1n/.step.sh: line 8: mapfile: command not found
+
+
+----------------------------------------------------------------------
+Ran 1027 tests in 97.473s
+
+FAILED (failures=2, skipped=186)
+toolchain: using the image's verified packages, fonts, browsers and film models
+toolchain: using the image's verified packages, fonts, browsers and film models

@@ -1,5 +1,8 @@
 # Chen–Chen paper repository handoff
 
+For the 2026-11-13 CI follow-up and layer 0.3.1 validation, see
+[POST-BUILD-FIX.md](POST-BUILD-FIX.md). The original preparation record follows.
+
 Prepared locally on 2026-11-13. No push, repository creation, PR, authenticated
 request, `gh` or `nyxid` operation was performed. The user’s MongoDB process was
 not touched. The repository is on `main` with no remotes. It has a fresh root

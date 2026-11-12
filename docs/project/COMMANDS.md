@@ -1,5 +1,10 @@
 # Recorded validation and build commands
 
+The later layer 0.3.1 CI repair has its own command/results record in
+[POST-BUILD-FIX.md](POST-BUILD-FIX.md) and
+[validation/post-build-fix/](validation/post-build-fix/). The table below records
+the original paper preparation.
+
 Working directory: `/Users/lexa/Desktop/lexa/omega/mathesis-paper-chen-chen`. Each command was invoked through
 `python3 docs/project/run-command.py <log-label> <command...>`; the table shows
 the exact child arguments. Commands use the recorded existing Chrome and Tectonic,

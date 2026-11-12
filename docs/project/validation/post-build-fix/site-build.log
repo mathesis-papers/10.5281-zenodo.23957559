@@ -1,0 +1,20 @@
+→ site
+  site: cover of chen-chen-step-m-eulerian-parity-positivity/zh failed (typst failed for /var/folders/jd/5x6vvk8d4yzcmtmp7mjw_9nw0000gn/T/tbook-cover-5hl5subz/main.typ:
+Traceback (most recent call last):
+  File "/Users/lexa/Desktop/lexa/omega/mathesis-paper-chen-chen/tools/tbook/typst_worker.py", line 45, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "/Users/lexa/Desktop/lexa/omega/mathesis-paper-chen-chen/tools/tbook/typst_worker.py", line 30, in main
+    import typst
+ModuleNotFoundError: No module named 'typst'. Did you mean: 'test'?); using a CSS cover card
+  site: cover of chen-chen-step-m-eulerian-parity-positivity/en failed (typst failed for /var/folders/jd/5x6vvk8d4yzcmtmp7mjw_9nw0000gn/T/tbook-cover-eiqwiut2/main.typ:
+Traceback (most recent call last):
+  File "/Users/lexa/Desktop/lexa/omega/mathesis-paper-chen-chen/tools/tbook/typst_worker.py", line 45, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "/Users/lexa/Desktop/lexa/omega/mathesis-paper-chen-chen/tools/tbook/typst_worker.py", line 30, in main
+    import typst
+ModuleNotFoundError: No module named 'typst'. Did you mean: 'test'?); using a CSS cover card
+  cache: slides chen-chen-step-m-eulerian-parity-positivity is up to date (7cd466895d7d)
+Mathesis site: root → chen-chen-step-m-eulerian-parity-positivity/; 0 readings, 1 slide editions, 1 visualizations
+✓ site (0.4s) → _site

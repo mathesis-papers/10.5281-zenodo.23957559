@@ -1,0 +1,42 @@
+{
+  "layer_version": "0.3.1",
+  "original_paper_main": "fd35740b6583576939960be68ce4a74edb765a93",
+  "layer_source": "a75e7702ded7cfff56bb76abe3c4262f6afaaee7",
+  "combined_template": "22894117c07f3ddd042739e6011254af84afa0f5",
+  "upstream_fixture_correction": "7eb37dae97c276c656400e4ddc32dc8feec6e9e3",
+  "catalog_publisher": "7426f98cb10323214820b7a6843980da34742040",
+  "template_suite": {
+    "python": "3.12.13",
+    "total": 1027,
+    "passed": 839,
+    "skipped": 186,
+    "failures": 2,
+    "errors": 0,
+    "failure_reason": "macOS Bash lacks mapfile",
+    "log": "validation/post-build-fix/final-all-py312.log",
+    "command": "env -u GITHUB_TOKEN -u GH_TOKEN -u TRURETURING_TOKEN PATH=\"/opt/homebrew/opt/python@3.12/libexec/bin:$PATH\" TBOOK_PYTHON=python3.12 PYTHONPATH=tools python3.12 -m unittest discover -s tools/tests"
+  },
+  "layer_source_tests_passed": 21,
+  "layer_consumer_tests_passed": 21,
+  "upstream_film_tests_passed": 93,
+  "upstream_hook_tests_passed": 3,
+  "publisher_tests_passed": 7,
+  "workflow_fallback_validation_passed": true,
+  "paper_check": {
+    "generated_hashes_ok": 16,
+    "mapped_results": 8,
+    "pending": 0,
+    "stage": "complete"
+  },
+  "tbook_check": {
+    "books": 1,
+    "errors": 0,
+    "warnings": 0
+  },
+  "emit_function_unchanged_from_paper_main": true,
+  "production_upstream_hook_unchanged": true,
+  "site_build_passed": true,
+  "site_audit_passed": true,
+  "github_ci_run_verified": false,
+  "fresh_browser_review": false
+}
