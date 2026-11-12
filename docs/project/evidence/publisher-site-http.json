@@ -1,0 +1,32 @@
+[
+  {
+    "path": "",
+    "status": 200,
+    "bytes": 408
+  },
+  {
+    "path": "mathesis-materials.json",
+    "status": 200,
+    "bytes": 1093
+  },
+  {
+    "path": "chen-chen-step-m-eulerian-parity-positivity/slides/seminar/chen-chen-step-m-eulerian-parity-positivity-seminar-en.pdf",
+    "status": 200,
+    "bytes": 247552
+  },
+  {
+    "path": "chen-chen-step-m-eulerian-parity-positivity/slides/seminar/chen-chen-step-m-eulerian-parity-positivity-seminar-en-notes.pdf",
+    "status": 200,
+    "bytes": 264257
+  },
+  {
+    "path": "chen-chen-step-m-eulerian-parity-positivity/viz/step-triangle/",
+    "status": 200,
+    "bytes": 9993
+  },
+  {
+    "path": "chen-chen-step-m-eulerian-parity-positivity/",
+    "status": 200,
+    "bytes": 18957
+  }
+]

@@ -1,6 +1,6 @@
 {
   "schema": "trureturing-books.site.v1",
-  "generated_at": "2026-11-12T17:44:04Z",
+  "generated_at": "2026-11-12T18:59:25Z",
   "site": {
     "title": {
       "zh": "Chen \u548c Chen \u7684\u5947\u5076\u6b63\u6027\u731c\u60f3\u7684\u8bc1\u660e\uff1aOEIS A392664\u2013A392666 \u7684 COMMENTS \u53ca\u731c\u60f3 2\uff08\u7b2c 1 \u9875\uff09",
@@ -10,7 +10,7 @@
       "zh",
       "en"
     ],
-    "base_url": "https://mathesis-papers.github.io/chen-chen-step-m-eulerian-parity-positivity/",
+    "base_url": "https://papers.trureturing.org/chen-chen-step-m-eulerian-parity-positivity/",
     "repo": "mathesis-papers/chen-chen-step-m-eulerian-parity-positivity"
   },
   "template": {
@@ -61,16 +61,16 @@
       "files": [
         {
           "path": "chen-chen-step-m-eulerian-parity-positivity/slides/seminar/chen-chen-step-m-eulerian-parity-positivity-seminar-en-notes.pdf",
-          "size": 264252,
-          "sha256": "56b4e882360725fc268b08bb90fc17fca5cfda204569a5c5d0e5d250f3cc2cdd",
+          "size": 264257,
+          "sha256": "d94b8f1721fcdb703464f19e24720bcc9bf3e55e0fe90bb68c61c31272b720b9",
           "kind": "slides-notes-pdf",
           "lang": "en",
           "variant": "seminar"
         },
         {
           "path": "chen-chen-step-m-eulerian-parity-positivity/slides/seminar/chen-chen-step-m-eulerian-parity-positivity-seminar-en.pdf",
-          "size": 247562,
-          "sha256": "0679bbfb6fe955ae69b7f47c69145392d807b691bdcd550b9d3e6afb4c765bd2",
+          "size": 247552,
+          "sha256": "a873d66fbeee7c9cb66d5944d70cf6ff972fb69cbf60d4ef95090244f89a01e5",
           "kind": "slides-pdf",
           "lang": "en",
           "variant": "seminar"

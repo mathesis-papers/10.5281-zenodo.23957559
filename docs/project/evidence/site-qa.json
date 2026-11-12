@@ -1,5 +1,5 @@
 {
-  "base_url": "https://mathesis-papers.github.io/chen-chen-step-m-eulerian-parity-positivity/",
+  "base_url": "https://papers.trureturing.org/chen-chen-step-m-eulerian-parity-positivity/",
   "visible_books": 1,
   "exact_lean_citations": 0,
   "written_proof_results_per_language": 8,
@@ -15,16 +15,16 @@
   "pdf_files": [
     {
       "path": "chen-chen-step-m-eulerian-parity-positivity/slides/seminar/chen-chen-step-m-eulerian-parity-positivity-seminar-en-notes.pdf",
-      "size": 264252,
-      "sha256": "56b4e882360725fc268b08bb90fc17fca5cfda204569a5c5d0e5d250f3cc2cdd",
+      "size": 264257,
+      "sha256": "d94b8f1721fcdb703464f19e24720bcc9bf3e55e0fe90bb68c61c31272b720b9",
       "kind": "slides-notes-pdf",
       "lang": "en",
       "variant": "seminar"
     },
     {
       "path": "chen-chen-step-m-eulerian-parity-positivity/slides/seminar/chen-chen-step-m-eulerian-parity-positivity-seminar-en.pdf",
-      "size": 247562,
-      "sha256": "0679bbfb6fe955ae69b7f47c69145392d807b691bdcd550b9d3e6afb4c765bd2",
+      "size": 247552,
+      "sha256": "a873d66fbeee7c9cb66d5944d70cf6ff972fb69cbf60d4ef95090244f89a01e5",
       "kind": "slides-pdf",
       "lang": "en",
       "variant": "seminar"
@@ -32,5 +32,29 @@
   ],
   "reader_html_built": false,
   "cover": "CSS fallback; Typst unavailable",
-  "local_pdf_links_resolve": true
+  "local_pdf_links_resolve": true,
+  "root_redirect": "chen-chen-step-m-eulerian-parity-positivity/",
+  "materials": {
+    "doi": "10.5281/zenodo.23957560",
+    "reading": {},
+    "repository_url": "https://github.com/mathesis-papers/chen-chen-step-m-eulerian-parity-positivity",
+    "schema": "mathesis.materials.v1",
+    "site_url": "https://papers.trureturing.org/chen-chen-step-m-eulerian-parity-positivity/",
+    "slides": [
+      {
+        "id": "seminar",
+        "language": "en",
+        "notes_url": "https://papers.trureturing.org/chen-chen-step-m-eulerian-parity-positivity/chen-chen-step-m-eulerian-parity-positivity/slides/seminar/chen-chen-step-m-eulerian-parity-positivity-seminar-en-notes.pdf",
+        "pdf_url": "https://papers.trureturing.org/chen-chen-step-m-eulerian-parity-positivity/chen-chen-step-m-eulerian-parity-positivity/slides/seminar/chen-chen-step-m-eulerian-parity-positivity-seminar-en.pdf"
+      }
+    ],
+    "version": 2,
+    "visualizations": [
+      {
+        "id": "step-triangle",
+        "url": "https://papers.trureturing.org/chen-chen-step-m-eulerian-parity-positivity/chen-chen-step-m-eulerian-parity-positivity/viz/step-triangle/"
+      }
+    ],
+    "work": "chen-chen-step-m-eulerian-parity-positivity"
+  }
 }

@@ -1,4 +1,5 @@
 [site]
+post_build = ["python3", "docs/layer-mathesis/scripts/site.py"]
 repo = "mathesis-papers/chen-chen-step-m-eulerian-parity-positivity"
 base_url = "https://papers.trureturing.org/chen-chen-step-m-eulerian-parity-positivity/"
 languages = ["zh", "en"]
