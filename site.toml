@@ -1,7 +1,6 @@
 [site]
 repo = "mathesis-papers/chen-chen-step-m-eulerian-parity-positivity"
-base_url = "https://mathesis-papers.github.io/chen-chen-step-m-eulerian-parity-positivity/"
-# base_url = "https://chen-chen-step-m-eulerian-parity-positivity.papers.trureturing.org/"
+base_url = "https://papers.trureturing.org/chen-chen-step-m-eulerian-parity-positivity/"
 languages = ["zh", "en"]
 [site.title]
 zh = "Chen 和 Chen 的奇偶正性猜想的证明：OEIS A392664–A392666 的 COMMENTS 及猜想 2（第 1 页）"
