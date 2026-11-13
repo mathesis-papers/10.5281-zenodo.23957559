@@ -1,4 +1,0 @@
-→ slides chen-chen-step-m-eulerian-parity-positivity
-  academic: seminar-en.pdf
-  academic: seminar-en-notes.pdf
-✓ slides chen-chen-step-m-eulerian-parity-positivity (10.1s) → build/slides/chen-chen-step-m-eulerian-parity-positivity

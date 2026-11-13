@@ -1,7 +1,0 @@
-build/viz-shots/chen-chen-step-m-eulerian-parity-positivity/step-triangle-desk-zh.png
-build/viz-shots/chen-chen-step-m-eulerian-parity-positivity/step-triangle-desk-en.png
-build/viz-shots/chen-chen-step-m-eulerian-parity-positivity/step-triangle-embed-zh.png
-build/viz-shots/chen-chen-step-m-eulerian-parity-positivity/step-triangle-embed-en.png
-build/viz-shots/chen-chen-step-m-eulerian-parity-positivity/step-triangle-phone-zh.png
-build/viz-shots/chen-chen-step-m-eulerian-parity-positivity/step-triangle-phone-en.png
-build/viz-shots/chen-chen-step-m-eulerian-parity-positivity/step-triangle-thumb.png

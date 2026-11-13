@@ -11,4 +11,4 @@ repo = "the-omega-institute/trureturing"
 branch = "dev"
 [books]
 order = ["chen-chen-step-m-eulerian-parity-positivity"]
-hide = ["example-*"]
+hide = []

@@ -1,8 +1,0 @@
-{
-  "archived_file": "manuscript/finite-check.json",
-  "replay_log": "docs/project/validation/manuscript-finite-check.txt",
-  "json_values_equal": true,
-  "archived_sha256": "6035ab8644d920a0cc99f3bbb72f4ae6a618feb6f90ec32e7a441b8d5eca9b53",
-  "status": "all assertions satisfied",
-  "scope": "Finite checks through row 400; all-row statements have written proofs in note.pdf."
-}

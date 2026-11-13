@@ -1,8 +1,0 @@
-{
-  "removed": "/var/folders/jd/5x6vvk8d4yzcmtmp7mjw_9nw0000gn/T/mathesis-post-build-cargo",
-  "active_file_users": false,
-  "allocated_kib_before": 475708,
-  "allocated_kib_after": 0,
-  "reclaimed_mib": 464.55859375,
-  "retained": "logs and source commits; reproducible offline Cargo output removed after all publisher tests finished"
-}
