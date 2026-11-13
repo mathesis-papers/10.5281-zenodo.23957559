@@ -22,6 +22,26 @@ the old local patch checked the entire edition in that function. Whole-book
 `tbook check` continues to validate all environments. The film sandbox's
 `root=self.root` correction and its test file are already present upstream.
 
+## Test results
+
+- Full template suite: **1,083 tests in 706.307 seconds; 1,026 passed,
+  57 skipped, no failures or errors**, using Python 3.12.13. The skips concern
+  hidden example-book coverage and platform-specific cases. `template-tests.log`
+  is the complete successful run.
+- Mathesis integration suite: **21 tests passed**, both in the source against
+  upgraded tools and in this consumer with the existing real-paper projection.
+- Catalog publisher suite: **7 discovered, 6 passed, 1 skipped**. Its optional
+  full SDK preflight requires a local catalog binary and was not configured.
+- Additional mdBook-dependent validation: **148 tests, 142 passed, 6 skipped**.
+- The four compatibility-probe scenarios passed. The 8 reader browser checks,
+  both manifest checks, and `git diff --check` passed.
+
+Earlier full attempts exposed host tool dependencies: missing Java, system Bash
+without `mapfile`, a different Chrome renderer, and the application-bundled
+Node's native-library signing restriction. The successful run uses the tools
+listed below and the existing Homebrew Node. No upstream code, shared workflow
+or global installation was changed to resolve those local execution issues.
+
 ## Paper migration and remaining gate
 
 The paper's eight results retain their statements and written proofs. Both

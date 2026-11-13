@@ -1,0 +1,27 @@
+test_real_snapshot_fetch_render_check_fill_and_seal_without_remote_writes (test_prepare_integration.PrepareIntegration.test_real_snapshot_fetch_render_check_fill_and_seal_without_remote_writes) ... skipped 'set local SDK binary, template and real-paper fixture paths'
+test_control_change_and_mode_tamper_fail_before_publication (test_publisher.PublisherTests.test_control_change_and_mode_tamper_fail_before_publication) ... ok
+test_create_publish_repeat_and_preserve_unmanaged_files (test_publisher.PublisherTests.test_create_publish_repeat_and_preserve_unmanaged_files) ... ok
+test_recover_after_issue_failure_preserves_populated_book (test_publisher.PublisherTests.test_recover_after_issue_failure_preserves_populated_book) ... ok
+test_resume_template_only_repo_and_closed_paginated_issue (test_publisher.PublisherTests.test_resume_template_only_repo_and_closed_paginated_issue) ... ok
+test_seal_and_cname_fail_before_any_write (test_publisher.PublisherTests.test_seal_and_cname_fail_before_any_write) ... ok
+test_unrelated_repo_not_adopted_and_prepare_failure_does_not_publish (test_publisher.PublisherTests.test_unrelated_repo_not_adopted_and_prepare_failure_does_not_publish) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 3.360s
+
+OK (skipped=1)
+chen-chen-step-m-eulerian-parity-positivity: committed 8 paths
+.github: committed 1 paths
+mathesis-papers.github.io: committed 4 paths
+catalog: committed 2 paths
+.github: unchanged
+mathesis-papers.github.io: unchanged
+catalog: unchanged
+chen-chen-step-m-eulerian-parity-positivity: committed 8 paths
+.github: committed 1 paths
+mathesis-papers.github.io: committed 4 paths
+catalog: committed 2 paths
+chen-chen-step-m-eulerian-parity-positivity: committed 7 paths
+.github: committed 1 paths
+mathesis-papers.github.io: committed 4 paths
+catalog: committed 2 paths
