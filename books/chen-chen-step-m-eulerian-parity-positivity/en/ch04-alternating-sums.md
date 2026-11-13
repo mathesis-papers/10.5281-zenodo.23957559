@@ -6,7 +6,7 @@ Put $A_q(m)=R_{m,2q+1}(-1)$, with $A_0(m)=1$.
 The COMMENTS of A392665 and A392666 assert nonvanishing for
 every odd row, not just the displayed examples.
 
-::: {.corollary #paper-cor-odd status="written-proof" proof="pf-paper-cor-odd" mathesis="collected:chen-chen-step-m-eulerian-parity-positivity:2:s6" title="Paper Corollary 6 (cor:odd)" doi="10.5281/zenodo.23957560" source="Corollary 6 (cor:odd)"}
+::: {.corollary #paper-cor-odd status="written-proof" proof="pf-paper-cor-odd" mathesis="collected:chen-chen-step-m-eulerian-parity-positivity:2:s6" title="Paper Corollary 6 (cor:odd)" doi="10.5281/zenodo.23957560" source="Corollary 6 (cor:odd)" request="https://github.com/the-omega-institute/trureturing-requests/issues/7"}
 For every integer $q\geq1$,
 
 $$

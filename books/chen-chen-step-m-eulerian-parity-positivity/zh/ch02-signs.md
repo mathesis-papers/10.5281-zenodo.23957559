@@ -14,7 +14,7 @@ $$
 
 反射交换两个边界。内部项的两个前驱 $k-1,k$ 在上一行分别反射为 $n+1-k,n-k$，式 (2) 的两个系数也互换。因此按 $n$ 归纳得到式 (3)。
 
-::: {.lemma #paper-lem-second title="原文引理 2（lem:second）" status="written-proof" proof="pf-paper-lem-second" mathesis="collected:chen-chen-step-m-eulerian-parity-positivity:2:s2" doi="10.5281/zenodo.23957560" source="Lemma 2 (lem:second)"}
+::: {.lemma #paper-lem-second title="原文引理 2（lem:second）" status="written-proof" proof="pf-paper-lem-second" mathesis="collected:chen-chen-step-m-eulerian-parity-positivity:2:s2" doi="10.5281/zenodo.23957560" source="Lemma 2 (lem:second)" request="https://github.com/the-omega-institute/trureturing-requests/issues/3"}
 对 $r\geq3$，只要 $n\geq2$ 为偶数，就有 $T_{-r}(n,2)>0$。
 :::
 
@@ -65,7 +65,7 @@ $$
 
 该结论限制在 $m\leq-3$。若只讨论整数参数，剩下的值可以完整分类；下一条并没有声称对所有实数给出分类。
 
-::: {.corollary #paper-cor-classification title="原文推论 3（cor:classification）" status="written-proof" proof="pf-paper-cor-classification" mathesis="collected:chen-chen-step-m-eulerian-parity-positivity:2:s3" doi="10.5281/zenodo.23957560" source="Corollary 3 (cor:classification)"}
+::: {.corollary #paper-cor-classification title="原文推论 3（cor:classification）" status="written-proof" proof="pf-paper-cor-classification" mathesis="collected:chen-chen-step-m-eulerian-parity-positivity:2:s3" doi="10.5281/zenodo.23957560" source="Corollary 3 (cor:classification)" request="https://github.com/the-omega-institute/trureturing-requests/issues/4"}
 对整数 $m$，每个正偶数行逐项非负，当且仅当 $m\leq-3$ 或 $m\geq0$。恰好在这些参数上，每个正偶数行实际上都严格为正。
 :::
 

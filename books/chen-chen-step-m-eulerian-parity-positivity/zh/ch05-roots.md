@@ -4,7 +4,7 @@
 
 对 $n\geq2$，用 $M_n(m)$ 表示 $R_{m,n}$ 各根模的最大值。以下修正 [[6](references.md#bib-chen)，第 1 页定理 1 及第 2–3 页表格] 的 $m=-3$ 情形，并证明另外两个列出的负步长极限常数。
 
-::: {.theorem #paper-thm-growth title="原文定理 7（thm:growth）" status="written-proof" proof="pf-paper-thm-growth" mathesis="collected:chen-chen-step-m-eulerian-parity-positivity:2:s7" doi="10.5281/zenodo.23957560" source="Theorem 7 (thm:growth)"}
+::: {.theorem #paper-thm-growth title="原文定理 7（thm:growth）" status="written-proof" proof="pf-paper-thm-growth" mathesis="collected:chen-chen-step-m-eulerian-parity-positivity:2:s7" doi="10.5281/zenodo.23957560" source="Theorem 7 (thm:growth)" request="https://github.com/the-omega-institute/trureturing-requests/issues/8"}
 对每个实数 $m>0$ 和每个实数 $r\geq4$，
 
 $$
@@ -111,7 +111,7 @@ $$
 
 $m=-1$ 的系数公式已出现在 Greubel 于 2022 年 3 月 1 日补入 OEIS A144431 的 FORMULA 中 [[1](references.md#bib-oeislinked)]。其因式分解导出下列边界根描述。
 
-::: {.corollary #paper-cor-boundaryroots title="原文推论 8（cor:boundaryroots）" status="written-proof" proof="pf-paper-cor-boundaryroots" mathesis="collected:chen-chen-step-m-eulerian-parity-positivity:2:s8" doi="10.5281/zenodo.23957560" source="Corollary 8 (cor:boundaryroots)"}
+::: {.corollary #paper-cor-boundaryroots title="原文推论 8（cor:boundaryroots）" status="written-proof" proof="pf-paper-cor-boundaryroots" mathesis="collected:chen-chen-step-m-eulerian-parity-positivity:2:s8" doi="10.5281/zenodo.23957560" source="Corollary 8 (cor:boundaryroots)" request="https://github.com/the-omega-institute/trureturing-requests/issues/9"}
 对 $q\geq1$，两个被排除的整数步长满足
 
 $$

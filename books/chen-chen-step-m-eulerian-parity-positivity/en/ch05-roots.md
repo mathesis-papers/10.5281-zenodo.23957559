@@ -9,7 +9,7 @@ of $R_{m,n}$. The following corrects the $m=-3$ instance of
 [[6](references.md#bib-chen), p. 1, Theorem 1; pp. 2–3, tables], and proves the
 two other listed negative-step limiting constants.
 
-::: {.theorem #paper-thm-growth status="written-proof" proof="pf-paper-thm-growth" mathesis="collected:chen-chen-step-m-eulerian-parity-positivity:2:s7" title="Paper Theorem 7 (thm:growth)" doi="10.5281/zenodo.23957560" source="Theorem 7 (thm:growth)"}
+::: {.theorem #paper-thm-growth status="written-proof" proof="pf-paper-thm-growth" mathesis="collected:chen-chen-step-m-eulerian-parity-positivity:2:s7" title="Paper Theorem 7 (thm:growth)" doi="10.5281/zenodo.23957560" source="Theorem 7 (thm:growth)" request="https://github.com/the-omega-institute/trureturing-requests/issues/8"}
 For every real $m>0$ and every real $r\geq4$,
 
 $$
@@ -168,7 +168,7 @@ The $m=-1$ coefficient formula already appears in Greubel's
 1 March 2022 addition to OEIS A144431, FORMULA [[1](references.md#bib-oeislinked)].
 Its factorization gives the following boundary-case root description.
 
-::: {.corollary #paper-cor-boundaryroots status="written-proof" proof="pf-paper-cor-boundaryroots" mathesis="collected:chen-chen-step-m-eulerian-parity-positivity:2:s8" title="Paper Corollary 8 (cor:boundaryroots)" doi="10.5281/zenodo.23957560" source="Corollary 8 (cor:boundaryroots)"}
+::: {.corollary #paper-cor-boundaryroots status="written-proof" proof="pf-paper-cor-boundaryroots" mathesis="collected:chen-chen-step-m-eulerian-parity-positivity:2:s8" title="Paper Corollary 8 (cor:boundaryroots)" doi="10.5281/zenodo.23957560" source="Corollary 8 (cor:boundaryroots)" request="https://github.com/the-omega-institute/trureturing-requests/issues/9"}
 For $q\geq1$, the two excluded integer steps satisfy
 
 $$

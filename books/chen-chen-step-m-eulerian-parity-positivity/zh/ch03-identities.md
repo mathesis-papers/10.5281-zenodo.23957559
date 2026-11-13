@@ -4,7 +4,7 @@
 
 以下结论回应三个 OEIS 条目中相邻的 COMMENTS。这里先讨论同一递推的有限行恒等式与根界，而不是根的渐近增长。
 
-::: {.corollary #paper-cor-sums title="原文推论 4（cor:sums）" status="written-proof" proof="pf-paper-cor-sums" mathesis="collected:chen-chen-step-m-eulerian-parity-positivity:2:s4" doi="10.5281/zenodo.23957560" source="Corollary 4 (cor:sums)"}
+::: {.corollary #paper-cor-sums title="原文推论 4（cor:sums）" status="written-proof" proof="pf-paper-cor-sums" mathesis="collected:chen-chen-step-m-eulerian-parity-positivity:2:s4" doi="10.5281/zenodo.23957560" source="Corollary 4 (cor:sums)" request="https://github.com/the-omega-institute/trureturing-requests/issues/5"}
 对每个实数 $m$，
 
 $$
@@ -36,7 +36,7 @@ $$
 
 多项式的根可能是复数。“环域”只限制离原点的距离，不要求根为实数。下面的两个半径由同一行的相邻系数比值决定，可以随行号变化；不能把它理解为所有归一化根都落在一个固定环域中。
 
-::: {.corollary #paper-cor-annulus title="原文推论 5（cor:annulus）" status="written-proof" proof="pf-paper-cor-annulus" mathesis="collected:chen-chen-step-m-eulerian-parity-positivity:2:s5" doi="10.5281/zenodo.23957560" source="Corollary 5 (cor:annulus)"}
+::: {.corollary #paper-cor-annulus title="原文推论 5（cor:annulus）" status="written-proof" proof="pf-paper-cor-annulus" mathesis="collected:chen-chen-step-m-eulerian-parity-positivity:2:s5" doi="10.5281/zenodo.23957560" source="Corollary 5 (cor:annulus)" request="https://github.com/the-omega-institute/trureturing-requests/issues/6"}
 对实数 $m\leq-3$ 及偶数 $n\geq2$，$R_{m,n}$ 的每个根 $z$ 满足
 
 $$

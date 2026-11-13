@@ -36,7 +36,7 @@ by induction on $n$. If $m$ is an integer, all entries are integers.
 No values outside the triangle enter the equations.
 Set $R_{m,n}(y)=\sum_{k=1}^n T_m(n,k)y^{k-1}$.
 
-::: {.theorem #paper-thm-main status="written-proof" proof="pf-paper-thm-main" mathesis="collected:chen-chen-step-m-eulerian-parity-positivity:2:s1" title="Paper Theorem 1 (thm:main)" doi="10.5281/zenodo.23957560" source="Theorem 1 (thm:main)"}
+::: {.theorem #paper-thm-main status="written-proof" proof="pf-paper-thm-main" mathesis="collected:chen-chen-step-m-eulerian-parity-positivity:2:s1" title="Paper Theorem 1 (thm:main)" doi="10.5281/zenodo.23957560" source="Theorem 1 (thm:main)" request="https://github.com/the-omega-institute/trureturing-requests/issues/2"}
 For every real $r\geq3$, the triangle of step $m=-r$ satisfies
 
 1. $T_{-r}(n,k)>0$ for every positive even $n$ and $1\leq k\leq n$;

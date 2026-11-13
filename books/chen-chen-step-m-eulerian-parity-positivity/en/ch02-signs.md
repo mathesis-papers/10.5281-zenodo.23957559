@@ -18,7 +18,7 @@ to $n+1-k,n-k$, respectively. The two coefficients in
 [(2)](ch01-recurrence.md#eq-recurrence) are interchanged as well. Induction on $n$
 therefore proves [(3)](ch02-signs.md#eq-symmetry).
 
-::: {.lemma #paper-lem-second status="written-proof" proof="pf-paper-lem-second" mathesis="collected:chen-chen-step-m-eulerian-parity-positivity:2:s2" title="Paper Lemma 2 (lem:second)" doi="10.5281/zenodo.23957560" source="Lemma 2 (lem:second)"}
+::: {.lemma #paper-lem-second status="written-proof" proof="pf-paper-lem-second" mathesis="collected:chen-chen-step-m-eulerian-parity-positivity:2:s2" title="Paper Lemma 2 (lem:second)" doi="10.5281/zenodo.23957560" source="Lemma 2 (lem:second)" request="https://github.com/the-omega-institute/trureturing-requests/issues/3"}
 For $r\geq3$, $T_{-r}(n,2)>0$ whenever $n\geq2$ is even.
 :::
 
@@ -87,7 +87,7 @@ all odd-row interior entries.
 
 :::
 
-::: {.corollary #paper-cor-classification status="written-proof" proof="pf-paper-cor-classification" mathesis="collected:chen-chen-step-m-eulerian-parity-positivity:2:s3" title="Paper Corollary 3 (cor:classification)" doi="10.5281/zenodo.23957560" source="Corollary 3 (cor:classification)"}
+::: {.corollary #paper-cor-classification status="written-proof" proof="pf-paper-cor-classification" mathesis="collected:chen-chen-step-m-eulerian-parity-positivity:2:s3" title="Paper Corollary 3 (cor:classification)" doi="10.5281/zenodo.23957560" source="Corollary 3 (cor:classification)" request="https://github.com/the-omega-institute/trureturing-requests/issues/4"}
 For integer $m$, every positive even row is entrywise nonnegative
 if and only if $m\leq-3$ or $m\geq0$. For exactly these parameters,
 every positive even row is in fact strictly positive.
