@@ -27,7 +27,7 @@ $$
 
 把一行作为多项式的系数，记 $R_{m,n}(y)=\sum_{k=1}^n T_m(n,k)y^{k-1}$。代入 $y=1$ 就是行和，代入 $y=-1$ 就是交错和；复根的位置则反映另一种性质，不能只凭系数正负判断其全部增长行为。
 
-::: {.theorem #paper-thm-main title="原文定理 1（thm:main）" status="written-proof" proof="pf-paper-thm-main" mathesis="collected:chen-chen-step-m-eulerian-parity-positivity:2:s1"}
+::: {.theorem #paper-thm-main title="原文定理 1（thm:main）" status="written-proof" proof="pf-paper-thm-main" mathesis="collected:chen-chen-step-m-eulerian-parity-positivity:2:s1" doi="10.5281/zenodo.23957560" source="Theorem 1 (thm:main)"}
 对每个实数 $r\geq3$，步长 $m=-r$ 的三角形满足：
 
 1. 对每个正偶数 $n$ 及 $1\leq k\leq n$，$T_{-r}(n,k)>0$；

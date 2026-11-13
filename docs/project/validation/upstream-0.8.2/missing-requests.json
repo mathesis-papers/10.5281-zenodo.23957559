@@ -1,0 +1,194 @@
+[
+  {
+    "request": "",
+    "sources": [
+      {
+        "doi": "10.5281/zenodo.23957560",
+        "source": "Theorem 1 (thm:main)"
+      }
+    ],
+    "suggested_title": "[Formalization] Paper Theorem 1 (thm:main) | DOI:10.5281/zenodo.23957560 | Theorem 1 (thm:main)",
+    "uses": [
+      {
+        "book": "chen-chen-step-m-eulerian-parity-positivity",
+        "id": "paper-thm-main",
+        "chapter": "ch01-recurrence.md",
+        "lang": "zh",
+        "title": "原文定理 1（thm:main）",
+        "proof": "pf-paper-thm-main",
+        "doi": "10.5281/zenodo.23957560",
+        "source": "Theorem 1 (thm:main)"
+      }
+    ],
+    "result_count": 1,
+    "book_count": 1
+  },
+  {
+    "request": "",
+    "sources": [
+      {
+        "doi": "10.5281/zenodo.23957560",
+        "source": "Lemma 2 (lem:second)"
+      }
+    ],
+    "suggested_title": "[Formalization] Paper Lemma 2 (lem:second) | DOI:10.5281/zenodo.23957560 | Lemma 2 (lem:second)",
+    "uses": [
+      {
+        "book": "chen-chen-step-m-eulerian-parity-positivity",
+        "id": "paper-lem-second",
+        "chapter": "ch02-signs.md",
+        "lang": "zh",
+        "title": "原文引理 2（lem:second）",
+        "proof": "pf-paper-lem-second",
+        "doi": "10.5281/zenodo.23957560",
+        "source": "Lemma 2 (lem:second)"
+      }
+    ],
+    "result_count": 1,
+    "book_count": 1
+  },
+  {
+    "request": "",
+    "sources": [
+      {
+        "doi": "10.5281/zenodo.23957560",
+        "source": "Corollary 3 (cor:classification)"
+      }
+    ],
+    "suggested_title": "[Formalization] Paper Corollary 3 (cor:classification) | DOI:10.5281/zenodo.23957560 | Corollary 3 (cor:classification)",
+    "uses": [
+      {
+        "book": "chen-chen-step-m-eulerian-parity-positivity",
+        "id": "paper-cor-classification",
+        "chapter": "ch02-signs.md",
+        "lang": "zh",
+        "title": "原文推论 3（cor:classification）",
+        "proof": "pf-paper-cor-classification",
+        "doi": "10.5281/zenodo.23957560",
+        "source": "Corollary 3 (cor:classification)"
+      }
+    ],
+    "result_count": 1,
+    "book_count": 1
+  },
+  {
+    "request": "",
+    "sources": [
+      {
+        "doi": "10.5281/zenodo.23957560",
+        "source": "Corollary 4 (cor:sums)"
+      }
+    ],
+    "suggested_title": "[Formalization] Paper Corollary 4 (cor:sums) | DOI:10.5281/zenodo.23957560 | Corollary 4 (cor:sums)",
+    "uses": [
+      {
+        "book": "chen-chen-step-m-eulerian-parity-positivity",
+        "id": "paper-cor-sums",
+        "chapter": "ch03-identities.md",
+        "lang": "zh",
+        "title": "原文推论 4（cor:sums）",
+        "proof": "pf-paper-cor-sums",
+        "doi": "10.5281/zenodo.23957560",
+        "source": "Corollary 4 (cor:sums)"
+      }
+    ],
+    "result_count": 1,
+    "book_count": 1
+  },
+  {
+    "request": "",
+    "sources": [
+      {
+        "doi": "10.5281/zenodo.23957560",
+        "source": "Corollary 5 (cor:annulus)"
+      }
+    ],
+    "suggested_title": "[Formalization] Paper Corollary 5 (cor:annulus) | DOI:10.5281/zenodo.23957560 | Corollary 5 (cor:annulus)",
+    "uses": [
+      {
+        "book": "chen-chen-step-m-eulerian-parity-positivity",
+        "id": "paper-cor-annulus",
+        "chapter": "ch03-identities.md",
+        "lang": "zh",
+        "title": "原文推论 5（cor:annulus）",
+        "proof": "pf-paper-cor-annulus",
+        "doi": "10.5281/zenodo.23957560",
+        "source": "Corollary 5 (cor:annulus)"
+      }
+    ],
+    "result_count": 1,
+    "book_count": 1
+  },
+  {
+    "request": "",
+    "sources": [
+      {
+        "doi": "10.5281/zenodo.23957560",
+        "source": "Corollary 6 (cor:odd)"
+      }
+    ],
+    "suggested_title": "[Formalization] Paper Corollary 6 (cor:odd) | DOI:10.5281/zenodo.23957560 | Corollary 6 (cor:odd)",
+    "uses": [
+      {
+        "book": "chen-chen-step-m-eulerian-parity-positivity",
+        "id": "paper-cor-odd",
+        "chapter": "ch04-alternating-sums.md",
+        "lang": "zh",
+        "title": "原文推论 6（cor:odd）",
+        "proof": "pf-paper-cor-odd",
+        "doi": "10.5281/zenodo.23957560",
+        "source": "Corollary 6 (cor:odd)"
+      }
+    ],
+    "result_count": 1,
+    "book_count": 1
+  },
+  {
+    "request": "",
+    "sources": [
+      {
+        "doi": "10.5281/zenodo.23957560",
+        "source": "Theorem 7 (thm:growth)"
+      }
+    ],
+    "suggested_title": "[Formalization] Paper Theorem 7 (thm:growth) | DOI:10.5281/zenodo.23957560 | Theorem 7 (thm:growth)",
+    "uses": [
+      {
+        "book": "chen-chen-step-m-eulerian-parity-positivity",
+        "id": "paper-thm-growth",
+        "chapter": "ch05-roots.md",
+        "lang": "zh",
+        "title": "原文定理 7（thm:growth）",
+        "proof": "pf-paper-thm-growth",
+        "doi": "10.5281/zenodo.23957560",
+        "source": "Theorem 7 (thm:growth)"
+      }
+    ],
+    "result_count": 1,
+    "book_count": 1
+  },
+  {
+    "request": "",
+    "sources": [
+      {
+        "doi": "10.5281/zenodo.23957560",
+        "source": "Corollary 8 (cor:boundaryroots)"
+      }
+    ],
+    "suggested_title": "[Formalization] Paper Corollary 8 (cor:boundaryroots) | DOI:10.5281/zenodo.23957560 | Corollary 8 (cor:boundaryroots)",
+    "uses": [
+      {
+        "book": "chen-chen-step-m-eulerian-parity-positivity",
+        "id": "paper-cor-boundaryroots",
+        "chapter": "ch05-roots.md",
+        "lang": "zh",
+        "title": "原文推论 8（cor:boundaryroots）",
+        "proof": "pf-paper-cor-boundaryroots",
+        "doi": "10.5281/zenodo.23957560",
+        "source": "Corollary 8 (cor:boundaryroots)"
+      }
+    ],
+    "result_count": 1,
+    "book_count": 1
+  }
+]

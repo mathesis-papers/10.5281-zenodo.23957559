@@ -8,7 +8,7 @@ These consequences address the adjacent COMMENTS statements in the three
 OEIS entries. They concern the same recurrence, rather than a different
 root-asymptotic assertion.
 
-::: {.corollary #paper-cor-sums status="written-proof" proof="pf-paper-cor-sums" mathesis="collected:chen-chen-step-m-eulerian-parity-positivity:2:s4" title="Paper Corollary 4 (cor:sums)"}
+::: {.corollary #paper-cor-sums status="written-proof" proof="pf-paper-cor-sums" mathesis="collected:chen-chen-step-m-eulerian-parity-positivity:2:s4" title="Paper Corollary 4 (cor:sums)" doi="10.5281/zenodo.23957560" source="Corollary 4 (cor:sums)"}
 For every real $m$,
 
 $$
@@ -46,7 +46,7 @@ to $R_{m,n}(-1)$ cancel, and their parity sums agree.
 
 :::
 
-::: {.corollary #paper-cor-annulus status="written-proof" proof="pf-paper-cor-annulus" mathesis="collected:chen-chen-step-m-eulerian-parity-positivity:2:s5" title="Paper Corollary 5 (cor:annulus)"}
+::: {.corollary #paper-cor-annulus status="written-proof" proof="pf-paper-cor-annulus" mathesis="collected:chen-chen-step-m-eulerian-parity-positivity:2:s5" title="Paper Corollary 5 (cor:annulus)" doi="10.5281/zenodo.23957560" source="Corollary 5 (cor:annulus)"}
 For real $m\leq-3$ and even $n\geq2$, every root $z$ of
 $R_{m,n}$ satisfies
 

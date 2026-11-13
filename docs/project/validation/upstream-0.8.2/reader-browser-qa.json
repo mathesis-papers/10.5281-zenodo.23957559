@@ -1,0 +1,66 @@
+[
+  {
+    "lang": "zh",
+    "theme": "light",
+    "width": 390,
+    "overflow": false,
+    "badge": true,
+    "doiLinks": 1
+  },
+  {
+    "lang": "zh",
+    "theme": "light",
+    "width": 1280,
+    "overflow": false,
+    "badge": true,
+    "doiLinks": 1
+  },
+  {
+    "lang": "zh",
+    "theme": "navy",
+    "width": 390,
+    "overflow": false,
+    "badge": true,
+    "doiLinks": 1
+  },
+  {
+    "lang": "zh",
+    "theme": "navy",
+    "width": 1280,
+    "overflow": false,
+    "badge": true,
+    "doiLinks": 1
+  },
+  {
+    "lang": "en",
+    "theme": "light",
+    "width": 390,
+    "overflow": false,
+    "badge": true,
+    "doiLinks": 1
+  },
+  {
+    "lang": "en",
+    "theme": "light",
+    "width": 1280,
+    "overflow": false,
+    "badge": true,
+    "doiLinks": 1
+  },
+  {
+    "lang": "en",
+    "theme": "navy",
+    "width": 390,
+    "overflow": false,
+    "badge": true,
+    "doiLinks": 1
+  },
+  {
+    "lang": "en",
+    "theme": "navy",
+    "width": 1280,
+    "overflow": false,
+    "badge": true,
+    "doiLinks": 1
+  }
+]

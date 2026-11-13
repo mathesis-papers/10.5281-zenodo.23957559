@@ -4,7 +4,7 @@
 
 记 $A_q(m)=R_{m,2q+1}(-1)$，$A_0(m)=1$。A392665 与 A392666 的 COMMENTS 要求所有奇数行都不为零，而不只是已经列出的样例。
 
-::: {.corollary #paper-cor-odd title="原文推论 6（cor:odd）" status="written-proof" proof="pf-paper-cor-odd" mathesis="collected:chen-chen-step-m-eulerian-parity-positivity:2:s6"}
+::: {.corollary #paper-cor-odd title="原文推论 6（cor:odd）" status="written-proof" proof="pf-paper-cor-odd" mathesis="collected:chen-chen-step-m-eulerian-parity-positivity:2:s6" doi="10.5281/zenodo.23957560" source="Corollary 6 (cor:odd)"}
 对每个整数 $q\geq1$，
 
 $$
