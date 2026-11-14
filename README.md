@@ -36,13 +36,13 @@ Original authors are listed above. Formalization contributors and attribution ar
 
 ## Reading and materials
 
-[Paper site](https://papers.trureturing.org/chen-chen-step-m-eulerian-parity-positivity/) · [Frozen PDF](paper.pdf) · [Citation](CITATION.cff)
+[Paper site](https://papers.trureturing.org/10.5281-zenodo.23957559/) · [Frozen PDF](paper.pdf) · [Citation](CITATION.cff)
 
-[中文阅读](https://papers.trureturing.org/chen-chen-step-m-eulerian-parity-positivity/chen-chen-step-m-eulerian-parity-positivity/zh/) · [Read in English](https://papers.trureturing.org/chen-chen-step-m-eulerian-parity-positivity/chen-chen-step-m-eulerian-parity-positivity/en/)
+[中文阅读](https://papers.trureturing.org/10.5281-zenodo.23957559/chen-chen-step-m-eulerian-parity-positivity/zh/) · [Read in English](https://papers.trureturing.org/10.5281-zenodo.23957559/chen-chen-step-m-eulerian-parity-positivity/en/)
 
-[Slides](https://papers.trureturing.org/chen-chen-step-m-eulerian-parity-positivity/chen-chen-step-m-eulerian-parity-positivity/slides/) ([sources](books/chen-chen-step-m-eulerian-parity-positivity/slides/)) · [Visualizations](https://papers.trureturing.org/chen-chen-step-m-eulerian-parity-positivity/chen-chen-step-m-eulerian-parity-positivity/viz/) ([sources](books/chen-chen-step-m-eulerian-parity-positivity/viz/))
+[Slides](https://papers.trureturing.org/10.5281-zenodo.23957559/chen-chen-step-m-eulerian-parity-positivity/slides/) ([sources](books/chen-chen-step-m-eulerian-parity-positivity/slides/)) · [Visualizations](https://papers.trureturing.org/10.5281-zenodo.23957559/chen-chen-step-m-eulerian-parity-positivity/viz/) ([sources](books/chen-chen-step-m-eulerian-parity-positivity/viz/))
 
-These are publication routes; available built materials are inventoried in [mathesis-materials.json](https://papers.trureturing.org/chen-chen-step-m-eulerian-parity-positivity/mathesis-materials.json).
+These are publication routes; available built materials are inventoried in [mathesis-materials.json](https://papers.trureturing.org/10.5281-zenodo.23957559/mathesis-materials.json).
 
 ## Book and formalization
 
