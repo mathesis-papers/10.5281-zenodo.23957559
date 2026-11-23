@@ -1,5 +1,14 @@
 # Publisher and conversion pipeline
 
+An existing collection may be migrated to authored reading with the catalog's
+local `promote_content.py` preparation command. Mathesis layer 0.7.0 retains
+its publisher-owned `versions/vN/` snapshots using
+`.mathesis/collection-history.json`. The source commit and every original byte
+are preserved, along with root PDF/source URLs and old language reading links.
+The catalog's `book_works` control must change with publication; do not let a
+scheduled collection refresh replace the authored tree. Historical downloads
+are separate from the current paper mapping and establish no proof coverage.
+
 The publisher selects one exact public CC-BY-4.0 collected-paper version and
 renders it with the existing `sdk/catalog` snapshot/fetch/render process. The
 adapter consumes that rendered `papers/<repository-name>/` directory offline.
@@ -54,20 +63,35 @@ citation. Every other formal result requires written-proof and an empty `gids`
 list; genuinely open items stay open. The checker validates syntax, consistency
 and proof presence, not the truth of the verdict or the declaration's membership
 at the recorded comparison commit; review against frozen state is required.
+An uncovered result may additionally carry `formalization_request` with exactly
+`label` (plain English source/result name) and `url` (canonical shared issue).
+This exposes the same registered request in the materials manifest, including
+for unbadged remarks from a paper without a DOI. It grants no written-proof
+badge, verified coverage, receipt or points. A `same` row cannot request another
+proof; use the broader uncovered row for a partial source claim. If the written
+proof environment also has a request, the two URLs must agree.
 Each mapped environment carries `mathesis="collected:<work>:<version>:<claim>"`.
 This file is book integration metadata, never a replacement for nodes or receipts.
 Every catalog node must be mapped or explicitly pending; several expository
 results may refer to one node only if each states its own exact relationship.
 
 The agent job runner is an external handoff, currently stubbed: give the selected
-frozen manuscript, exact-version public Chinese/English Mathesis explanations,
-current pin and imported nodes to `layer-mathesis-paper-book`; synchronize through
+frozen manuscript, available exact-version public Chinese/English Mathesis
+explanations, current pin and imported nodes to `layer-mathesis-paper-book`; synchronize through
 `layer-mathesis-paper-sync`; then use `layer-mathesis-paper-media`. Do not supply
 private referee/audit findings to the explanation job. Public exposition is
 version-bound and is not verification evidence (Mathesis contract §21 and
-CLAUDE.md §1). If explanations are absent, preserve pending state and obtain
-that public input; do not fabricate an explanation sidecar. This package does
+CLAUDE.md §1). If explanations are absent, the content author writes the same
+bilingual story directly from the frozen manuscript in the authored editions;
+there is no sidecar prerequisite or duplicate explanation task. Keep absent
+outputs pending until authored and checked. The mechanical adapter itself does
 not run a book-writing job or generate paper text.
+
+The Mathesis post-build hook
+adapts the existing film index for paper readers: bilingual heading, original
+player and downloads, language controls, author credit and expandable exact Lean
+source links. It removes template build instructions and internal book codes;
+the upstream media registry, film bytes, renderer and theme remain authoritative.
 
 The normal check permits an explicitly unfinished skeleton, reports its pending
 claim count, and checks all existing mappings. When conversion and all checks
@@ -146,3 +170,54 @@ bytes and the selected book. Run `paper.py front` when integration metadata or
 publication routes change. `paper.py check --layout-only` isolates the layout
 check from unresolved upstream evidence gates. Preparation logs, validation
 dumps, handoffs, one-off scripts and builds never enter commits.
+
+## Material handoff (0.6.0)
+
+The post-build adapter reads upstream `films/films.json` and the site manifest's
+`formalization_requests`. It advertises only built nonempty video files and
+requests used by the selected book. These extend `mathesis-materials.json`
+without changing its exact paper/version identity. Request links are work
+registrations, not proof receipts or live completion claims. Do not infer
+coverage from a closed issue. Main-site deployment and materials discovery must
+be enabled independently of paper Pages publication.
+
+Before a model run, use the catalog's `scripts/plan_content.py` against the local
+paper and built site. Its stable paper/source and story-dependent media keys
+identify missing work. It neither executes a model nor marks content as
+mathematically verified. The upstream skills remain the content producer's
+instructions; the mechanical publisher still does not write a story or render
+a film merely because it opened a preparation issue. The complete downstream
+ownership and validation plan lives in Mathesis `docs/PAPER_PIPELINE.md`.
+
+The story is the plain-language explanation itself, for a curious high-school
+student with school algebra and no university mathematics. Reuse or improve the
+same exact-version text; do not schedule separate short-guide and full-story
+generations. Missing sidecars do not prevent authoring from the frozen paper.
+Mathesis maintains this academic-paper editorial policy in its own layer,
+independently of the upstream monograph style, while reusing upstream tools.
+[REQUESTS.md](REQUESTS.md) defines source registration and community handoff.
+Ordinary contributors develop in their own forks and send focused PRs directly
+to upstream trureturing `dev` under its current rules; permitted upstream
+branches are also possible. The optional Mathesis fork serves only a named
+collaboration, not a required staging merge or permanent sync/CI service. The
+single shared request queue, upstream freeze authority and existing independent
+Mathesis receipt/points authority remain separate. Paper-sync reviews exact
+version/statement correspondence using existing mapping and comparison records;
+unreviewed claims remain pending/unknown. No automatic semantic binding or
+GitHub-to-platform credit reconciliation is implemented by these links.
+
+Required products are that checked bilingual story, an academic presentation and
+an actual narrated video. Interactive illustrations are selected for the
+mathematical content. Use `book-film` and the real film build/QA, retaining
+subtitles and source claim boundaries; a skipped render is pending, not done.
+Editable PowerPoint export is not currently implemented by the template.
+These content-completion goals do not add a video gate to publication/display
+of an otherwise eligible public paper or its existing checked materials.
+
+The next downstream work is to activate the existing material-discovery
+interface and update released consumer pins, then read back exact-version
+materials. Follow with one manual exact-claim/frozen-declaration mapping and,
+only for an eligible author-confirmed target, the existing independent receipt
+route. These are future tasks; no deployment, receipt or points are produced by
+this layer documentation. Reuse reviewed content and generate only missing
+products. Do not build a second queue, renderer or admission/credit authority.

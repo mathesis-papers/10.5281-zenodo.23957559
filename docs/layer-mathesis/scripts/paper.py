@@ -18,6 +18,10 @@ import sys
 import tempfile
 import tomllib
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from mathesis_requests import result_requests
+from collection_history import history_files
+
 ROOT = Path(__file__).resolve().parents[3]
 REQUIRED = {"paper.json", "CITATION.cff", "formalization/nodes.json", "paper.pdf", "LICENSES/CC-BY-4.0.txt"}
 FRONT_MARKER = b"\n<!-- Mathesis generated repository guide; refresh with paper.py front. -->\n"
@@ -105,7 +109,8 @@ def tree_entries(root, rules):
                 if name in dirs:
                     dirs.remove(name)
                 continue
-            local = name in rules["local_only"]
+            film_output = re.fullmatch(r"books/[a-z0-9]+(?:-[a-z0-9]+)*/films/\d{3}-[a-z0-9]+(?:-[a-z0-9]+)*/out", rel)
+            local = name in rules["local_only"] or film_output is not None
             has_tracked = rel in tracked or any(n.startswith(rel + "/") for n in tracked)
             if local and not has_tracked:
                 # These are the only permitted local workspaces. In a git tree
@@ -180,11 +185,18 @@ def layout_issues(root):
             if not (path.is_file() if name == "book.toml" else path.is_dir()):
                 issues.append((f"books/{slug}/{name}", "zone 2 requires the bilingual content skeleton"))
     allowed_roots = (managed_roots | set(rules["front"]) | {"books", ".mathesis", "formalization"} |
-                     set(rules["record_files"]) | set(rules["record_directories"]))
+                     set(rules["record_files"]) | set(rules["record_directories"]) |
+                     (set(rules["history_directories"]) if selected else set()))
     # record_files may contain a nested path, not a root entry.
     allowed_roots = {n.split("/")[0] for n in allowed_roots}
     manifest = read_json(root / ".mathesis/generated.json") if selected else {}
     hashes = manifest.get("sha256", {})
+    history = {}
+    if selected:
+        try:
+            history = history_files(root, paper["work"]["work"])
+        except (ValueError, KeyError, TypeError, OSError) as exc:
+            issues.append((".mathesis/collection-history.json", str(exc)))
     if selected:
         names = manifest["generated_paths"]
         if len(names) != len(set(names)) or set(names) != set(hashes):
@@ -197,15 +209,16 @@ def layout_issues(root):
         is_file = path.is_file() or path.is_symlink()
         known_machine = name in entries
         frozen = record_path(name, rules) and name in hashes
+        historical = name in history
         if len(parts) == 1 and name not in allowed_roots:
             issues.append((name, "four zones: unknown root entry"))
         if is_file and not path.is_symlink() and path.stat().st_size > rules["size_limit"] and not (
-                name == "paper.pdf" or name.startswith("manuscript/")):
+                name in ("paper.pdf", "source.archive") or name.startswith("manuscript/") or historical):
             issues.append((name, "all zones: exceeds 2 MiB; only paper.pdf and manuscript/ are exempt"))
         if is_file and Path(name).suffix.lower() in rules["built_suffixes"] and not (
-                name == "paper.pdf" or name.startswith("manuscript/")):
+                name in ("paper.pdf", "source.archive") or name.startswith("manuscript/") or historical):
             issues.append((name, "all zones: built output must stay outside the repository"))
-        if not known_machine and not frozen:
+        if not known_machine and not frozen and not historical:
             if any(name == d or name.startswith(d + "/") or d in parts for d in rules["forbidden_directories"]) or any(
                     fnmatch.fnmatchcase(path.name.lower(), p) for p in rules["forbidden_filenames"]):
                 issues.append((name, "all zones: preparation debris/run records belong outside the repository"))
@@ -216,6 +229,9 @@ def layout_issues(root):
                 issues.append((name, "zone 2 permits only the documented book content entries"))
             elif is_file and path.suffix == ".py" and len(parts) > 2 and parts[2] != "figures":
                 issues.append((name, "zone 2 permits Python source only as a reusable figure generator"))
+        elif parts[0] == "versions":
+            if is_file and not historical:
+                issues.append((name, "zone 1 version snapshot is absent from collection-history"))
         elif parts[0] == ".mathesis":
             if name != ".mathesis" and name not in rules["record_metadata"]:
                 issues.append((name, "zone 1 permits only the manifest, book mapping and sole statement review"))
@@ -264,10 +280,14 @@ def front_bytes(root):
     slug = mapping["book"]
     site = tomllib.loads((root / "site.toml").read_text())["site"]
     base = site["base_url"].rstrip("/") + "/"
+    media = []
+    for directory, label, pattern in (("slides", "Slides", "*/deck.toml"), ("films", "Videos", "*/film.json"), ("viz", "Visualizations", "*/index.html")):
+        source = root / "books" / slug / directory
+        if source.is_dir() and any(p.is_file() for p in source.glob(pattern)):
+            media.append(f"[{label}]({base}{slug}/{directory}/) ([sources](books/{slug}/{directory}/))")
     guide = ["", "## Reading and materials", "", f"[Paper site]({base}) · [Frozen PDF](paper.pdf) · [Citation](CITATION.cff)", "",
              f"[中文阅读]({base}{slug}/zh/) · [Read in English]({base}{slug}/en/)", "",
-             f"[Slides]({base}{slug}/slides/) ([sources](books/{slug}/slides/)) · "
-             f"[Visualizations]({base}{slug}/viz/) ([sources](books/{slug}/viz/))", "",
+             " · ".join(media) or "Media sources have not been prepared yet.", "",
              "These are publication routes; available built materials are inventoried in "
              f"[mathesis-materials.json]({base}mathesis-materials.json).", "",
              "## Book and formalization", "",
@@ -284,7 +304,7 @@ def front_bytes(root):
               + (f"[Statement comparisons]({review})." if mapping["results"] else "Comparisons begin with content preparation."), "",
               "## Repository map", "", "| Zone | Location |", "|---|---|",
               "| Paper record | `paper.json`, `CITATION.cff`, `paper.pdf`, `manuscript/`, `formalization/nodes.json`, `LICENSES/`, `.mathesis/` |",
-              f"| Content | `books/{slug}/`: Chinese/English text, figures, visualizations, slides, assets |",
+              f"| Content | `books/{slug}/`: Chinese/English text, figures, visualizations, videos, slides, assets |",
               "| Machinery | Upstream and layer managed paths; update with `tbook template update` |",
               "| Repository front | This README, changelog, contribution guide, licence, project/site/pin configuration, `template.d/` |", "",
               "See [the enforced layout](docs/layer-mathesis/LAYOUT.md). Preparation run records and built outputs stay outside the committed tree.", ""]
@@ -555,6 +575,7 @@ def check(root, complete=False):
     require(len(pending) == len(set(pending)) and not set(mapped) & set(pending) and set(mapped) | set(pending) == ids,
             "claim coverage differs: every node must be mapped or explicitly pending")
     require(all(v["claim"] in ids for v in mapping["results"].values()), "unknown mapped claim")
+    result_requests(mapping)
     os.environ["TBOOK_ROOT"] = str(root)
     sys.path.insert(0, str(root / "tools"))
     from tbook import config, model
@@ -584,6 +605,9 @@ def check(root, complete=False):
         require(set(result_envs) == set(mapping["results"]), f"{lang} result ids differ from claim mapping")
         for result_id, env in result_envs.items():
             row = mapping["results"][result_id]
+            if row.get("formalization_request") and env.attrs.get("request"):
+                require(row["formalization_request"]["url"] == env.attrs.get("request"),
+                        f"{lang} #{result_id}: book mapping and written-proof request differ")
             require(env.attrs.get("mathesis") == row["claim"] and env.lean == row["gids"],
                     f"{lang} #{result_id}: claim/GIDs differ from book mapping")
             require(len(env.lean) == len(set(env.lean)), f"{lang} #{result_id}: duplicate GID")

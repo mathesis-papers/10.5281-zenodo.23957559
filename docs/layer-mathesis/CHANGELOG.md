@@ -1,5 +1,55 @@
 # Mathesis layer changelog
 
+## [0.7.6] - 2026-11-20
+
+- Make the LaTeX manuscript template general for papers and short notes. Standardize A4 typography and common mathematical environments while leaving sections, length and coverage tables to the argument. Support DOI, arXiv, ISBN and stable web-source references, with either an inline bibliography or BibTeX. Our own short notes use the template as their default reference.
+
+## [0.7.5] - 2026-11-20
+
+- Add the LaTeX manuscript skeleton for short notes (`manuscript/note.tex`) and its description (`MANUSCRIPT.md`): fixed layout, order of parts, the scope table and the verification-coverage paragraph.
+
+## [0.7.4] - 2026-11-19
+
+- Keep the real paper work ID separate from the repository name in integration fixtures. DOI-named repositories now exercise the same content-slug and request-registration checks as other papers.
+
+## [0.7.3] - 2026-11-15
+
+- Present paper films with a readable bilingual heading, narration information and author credit. Keep proof sources expandable and preserve playback, downloads and language controls, while removing build instructions and internal book codes from the reader page. Adapt only Mathesis output; the upstream renderer and media contract remain unchanged.
+
+## [0.7.2] - 2026-11-15
+
+- Read written-proof request attributes through the upstream parsed-attribute interface. Accept matching mapped request links and keep rejecting links that disagree with the written proof.
+
+## [0.7.1] - 2026-11-15
+
+- Treat the published film pipeline's ignored, untracked `books/<slug>/films/<id>/out/` as local build output. Keep rejecting tracked media, unignored output and unrelated content directories.
+- Consume the published film registry's standard output keys, including `narrated_720p`, and exclude its cover image when emitting actual built video links.
+
+## [0.7.0] - 2026-11-15
+
+- Preserve publisher-owned collection version snapshots during an authored-book migration, with a separate immutable source inventory and unchanged public download paths.
+- Retain original root PDF/source downloads and old language reading addresses; historical snapshots grant no current coverage, receipts or credit.
+
+## [0.6.2] - 2026-11-15
+
+- Export registered shared requests from reviewed result mappings, including unbadged remarks without a DOI, while preserving proof-evidence and credit boundaries.
+- Require canonical URLs, readable labels and agreement with written-proof request attributes; deduplicate repeated uses of one request.
+- Make interactive visualization conditional on a concrete explanatory benefit; stories and static figures can be complete without interaction.
+
+## [0.6.1] - 2026-11-14
+
+- Define one bilingual story/plain-language explanation for a high-school reader, reused by slides and video, with Mathesis academic-paper editorial ownership.
+- Document shared-request claiming and ordinary contributor-fork PRs directly to upstream dev; retain the Mathesis fork only for a named collaboration, without an extra integration gate or permanent sync service.
+- Preserve original-source/Mathesis provenance, historical registration identities, exact/partial/unknown coverage and existing platform credit rules.
+- Align the preparation checklist with the single-story and actual-video requirements.
+- Permit direct story authoring from the frozen manuscript when sidecars are absent; missing video remains pending without blocking eligible paper display. Record future discovery/pin activation and a manual mapping/eligible-receipt pilot without claiming automation.
+
+## [0.6.0] - 2026-11-14
+
+- Discover actual built videos and selected-book shared formalization requests through the existing upstream manifests.
+- Permit film sources and frozen source.archive; preserve four-zone ownership and migrate existing film directories/fronts.
+- Specify story → presentation/video production and local missing-work inspection without model calls or invented proof status.
+
 ## [0.5.0] - 2026-11-13
 
 - Define and enforce the four-zone layout in LAYOUT.md, including one work-id book, generated record ownership, manifest-listed machinery, the sole statement review, debris/output bans and the 2 MiB limit.

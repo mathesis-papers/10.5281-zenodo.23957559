@@ -31,6 +31,12 @@ class SiteTests(unittest.TestCase):
             shutil.copyfile(source / name, path)
         self.work = json.loads((self.root / "paper.json").read_text())["work"]
         self.slug = json.loads((self.root / ".mathesis/book.json").read_text())["book"]
+        # Each test supplies its own request inventory; the selected real paper
+        # may already have unrelated registered requests in its mapping.
+        mapping = json.loads((self.root / ".mathesis/book.json").read_text())
+        for row in mapping.get("results", {}).values():
+            row.pop("formalization_request", None)
+        (self.root / ".mathesis/book.json").write_text(json.dumps(mapping))
         self.out = self.root / "_site"
         self.book = {"slug": self.slug, "editions": [{"lang": "en", "html": self.slug + "/en/"}, {"lang": "zh", "html": None}],
                      "files": [], "media": {"viz": ["step-triangle"]}}
@@ -74,16 +80,117 @@ class SiteTests(unittest.TestCase):
         self.add("manifest.json", json.dumps(self.manifest).encode())
         with self.assertRaisesRegex(ValueError, "exactly one"):
             site.emit(self.root, self.out)
+
         self.manifest["books"].pop()
         self.book["editions"][0]["html"] = "../outside/"
         self.add("manifest.json", json.dumps(self.manifest).encode())
         with self.assertRaisesRegex(ValueError, "invalid published"):
             site.emit(self.root, self.out)
 
+    def test_collection_migration_keeps_downloads_and_old_reading_addresses(self):
+        import hashlib
+        name = 'versions/v1/paper.pdf'
+        path = self.root / name
+        path.parent.mkdir(parents=True)
+        path.write_bytes(b'original version-one PDF')
+        (self.root / '.mathesis/collection-history.json').write_text(json.dumps({
+            'schema': 'mathesis.collection-history.v1', 'work': self.work['work'],
+            'source_commit': 'a' * 40, 'sha256': {name: hashlib.sha256(path.read_bytes()).hexdigest()}}))
+        paper = json.loads((self.root / 'paper.json').read_text())
+        paper['files'] = {'source': {'original_path': 'manuscript/original-source.archive'}}
+        (self.root / 'paper.json').write_text(json.dumps(paper))
+        frozen = {}
+        for name, data in [('paper.pdf', b'original current PDF'), ('manuscript/original-source.archive', b'original source archive')]:
+            p = self.root / name
+            p.parent.mkdir(parents=True, exist_ok=True)
+            p.write_bytes(data)
+            frozen[name] = hashlib.sha256(data).hexdigest()
+        (self.root / '.mathesis/generated.json').write_text(json.dumps({'sha256': frozen}))
+        self.add(self.slug + '/en/index.html')
+        for _ in range(2):
+            result = site.emit(self.root, self.out)
+            self.assertEqual((self.out / 'versions/v1/paper.pdf').read_bytes(), b'original version-one PDF')
+            self.assertEqual((self.out / 'paper.pdf').read_bytes(), b'original current PDF')
+            self.assertEqual((self.out / 'source.archive').read_bytes(), b'original source archive')
+            self.assertIn('../' + self.slug + '/en/', (self.out / 'en/index.html').read_text())
+            self.assertNotIn('receipt', result)
+
+        paper['files']['source']['original_path'] = '../private'
+        (self.root / 'paper.json').write_text(json.dumps(paper))
+        with self.assertRaisesRegex(ValueError, 'invalid original collected source'):
+            site.emit(self.root, self.out)
+
+    def test_video_requires_built_registry_and_real_nonempty_mp4(self):
+        self.book["media"]["films"] = ["001-parity"]
+        registry = {"version": 2, "book": self.slug, "films": [{"id": "001-parity", "title": "Why parity matters", "built": True,
+                    "videos": {"narrated_720p": "001-parity/film.mp4", "cover": "001-parity/film_cover.jpg"},
+                    "poster": "001-parity/poster.jpg"}]}
+        self.add(self.slug + "/films/films.json", json.dumps(registry).encode())
+        self.add(self.slug + "/films/index.html")
+        self.add("manifest.json", json.dumps(self.manifest).encode())
+        self.assertEqual(site.emit(self.root, self.out)["videos"], [])
+        self.add(self.slug + "/films/001-parity/film.mp4", b"")
+        self.assertEqual(site.emit(self.root, self.out)["videos"], [])
+        self.add(self.slug + "/films/001-parity/film.mp4", b"\x00\x00\x00\x18ftypmp42")
+        videos = site.emit(self.root, self.out)["videos"]
+        self.assertEqual(len(videos), 1)
+        self.assertEqual(videos[0]["title"], "Why parity matters")
+        self.assertEqual(videos[0]["id"], "001-parity-narrated_720p")
+        self.assertIsNone(videos[0]["poster_url"])
+        for variant in ("narrated", "music_only", "music_only_720p"):
+            registry["films"][0]["videos"] = {variant: "001-parity/film.mp4"}
+            self.add(self.slug + "/films/films.json", json.dumps(registry).encode())
+            self.assertEqual(len(site.emit(self.root, self.out)["videos"]), 1)
+        registry["films"][0]["videos"] = {"unsupported": "001-parity/film.mp4"}
+        self.add(self.slug + "/films/films.json", json.dumps(registry).encode())
+        with self.assertRaisesRegex(ValueError, "invalid film output"):
+            site.emit(self.root, self.out)
+        registry["films"][0]["built"] = False
+        self.add(self.slug + "/films/films.json", json.dumps(registry).encode())
+        self.assertEqual(site.emit(self.root, self.out)["videos"], [])
+
+    def test_requests_are_selected_book_uses_not_completion_receipts(self):
+        self.manifest["formalization_requests"] = [
+            {"request": "https://github.com/the-omega-institute/trureturing-requests/issues/2", "uses": [
+                {"book": self.slug, "id": "paper-thm-main", "source": "Theorem 1 (thm:main)"},
+                {"book": "other", "id": "elsewhere", "source": "Lemma 9"}]},
+            {"request": "https://github.com/the-omega-institute/trureturing-requests/issues/3", "uses": [
+                {"book": "other", "id": "other", "source": "Lemma 2"}]}]
+        self.add("manifest.json", json.dumps(self.manifest).encode())
+        requests = site.emit(self.root, self.out)["formalization_requests"]
+        self.assertEqual(requests, [{"label": "Theorem 1", "url": self.manifest["formalization_requests"][0]["request"]}])
+        self.assertNotIn("status", requests[0])
+        self.manifest["formalization_requests"][0]["request"] += "?x=1"
+        self.add("manifest.json", json.dumps(self.manifest).encode())
+        with self.assertRaisesRegex(ValueError, "invalid formalization request"):
+            site.emit(self.root, self.out)
+
+    def test_unbadged_paper_requests_survive_without_a_doi_and_do_not_duplicate(self):
+        paper = json.loads((self.root / "paper.json").read_text())
+        paper["work"]["doi"] = None
+        (self.root / "paper.json").write_text(json.dumps(paper))
+        path = self.root / ".mathesis/book.json"
+        mapping = json.loads(path.read_text())
+        row = next(iter(mapping["results"].values()))
+        row["comparison_verdict"] = "variant"
+        row["formalization_request"] = {"label": "Theorem 1", "url": "https://github.com/the-omega-institute/trureturing-requests/issues/24"}
+        path.write_text(json.dumps(mapping))
+        result = site.emit(self.root, self.out)
+        self.assertIsNone(result["doi"])
+        self.assertEqual(result["formalization_requests"], [row["formalization_request"]])
+        self.assertEqual(set(result["formalization_requests"][0]), {"label", "url"})
+        self.manifest["formalization_requests"] = [{"request": row["formalization_request"]["url"],
+            "uses": [{"book": self.slug, "id": "existing-result", "source": "Theorem 1"}]}]
+        self.add("manifest.json", json.dumps(self.manifest).encode())
+        self.assertEqual(len(site.emit(self.root, self.out)["formalization_requests"]), 1)
+
     def hook(self, external=False):
         script = self.root / site.SCRIPT_PATH
         script.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(SCRIPT, script)
+        shutil.copyfile(SCRIPT.with_name("mathesis_requests.py"), script.with_name("mathesis_requests.py"))
+        shutil.copyfile(SCRIPT.with_name("collection_history.py"), script.with_name("collection_history.py"))
+        shutil.copyfile(SCRIPT.with_name("media_pages.py"), script.with_name("media_pages.py"))
         command = [sys.executable, str(SCRIPT)] if external else [sys.executable, *COMMAND[1:]]
         # A stale TBOOK_ROOT must not override the hook cwd.
         env = dict(os.environ, TBOOK_SITE_OUT=str(self.out), TBOOK_ROOT=str(ROOT), PYTHONDONTWRITEBYTECODE="1")

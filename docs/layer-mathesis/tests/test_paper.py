@@ -34,7 +34,8 @@ class PaperTests(unittest.TestCase):
             shutil.copyfile(UPSTREAM / name, self.root / name)
         shutil.copytree(ROOT / "template.d", self.root / "template.d")
         self.work = json.loads((Path(SOURCE) / "paper.json").read_text())["work"]
-        self.slug = self.work["repository_name"]
+        self.slug = self.work["work"]
+        self.repository = "mathesis-papers/" + self.work["repository_name"]
         if self._testMethodName == "test_fill_removes_examples_and_persists_media_skeleton":
             example = self.root / "books/example-monograph/en/README.md"
             example.parent.mkdir(parents=True)
@@ -42,7 +43,7 @@ class PaperTests(unittest.TestCase):
         # Explicitly use the recorded title for both edition metadata in these tests.
         output = self.run_cli("fill", "--input", SOURCE, "--slug", self.slug,
                      "--title-zh", self.work["title"], "--title-en", self.work["title"],
-                     "--repository", "mathesis-papers/" + self.slug)
+                     "--repository", self.repository)
         for line in output.splitlines():
             if line.startswith("Moved upstream examples outside the repository: "):
                 self.example_archive = Path(line.split(": ", 1)[1])
@@ -71,7 +72,7 @@ class PaperTests(unittest.TestCase):
         self.assertIn("pending claims", self.run_cli("check"))
         self.run_cli("fill", "--input", SOURCE, "--slug", self.slug,
                      "--title-zh", self.work["title"], "--title-en", self.work["title"],
-                     "--repository", "mathesis-papers/" + self.slug, expected=1)
+                     "--repository", self.repository, expected=1)
 
     def test_fill_removes_examples_and_persists_media_skeleton(self):
         self.assertEqual([p.name for p in (self.root / "books").iterdir()], [self.slug])
@@ -79,6 +80,15 @@ class PaperTests(unittest.TestCase):
         for name in ("figures", "viz", "slides", "assets"):
             self.assertTrue((self.root / "books" / self.slug / name / ".gitkeep").is_file())
         self.run_cli("check", "--layout-only")
+
+    def test_empty_media_registry_keeps_front_stable_without_promising_outputs(self):
+        before = (self.root / "README.md").read_bytes()
+        path = self.root / "books" / self.slug / "viz/visualizations.json"
+        path.write_text(json.dumps({"version": 1, "visualizations": []}))
+        self.run_cli("check")
+        self.assertEqual((self.root / "README.md").read_bytes(), before)
+        self.assertNotIn(b"[Videos](", before)
+        self.assertNotIn(b"[Visualizations](", before)
 
     def test_academic_pdf_is_the_only_default(self):
         import tomllib
@@ -116,6 +126,18 @@ class PaperTests(unittest.TestCase):
                 'request="https://github.com/the-omega-institute/trureturing-requests/issues/1"}\n'
                 f'Integration fixture, no mathematical claim.\n:::\n\n::: {{.proof #pf-{claim}}}\nFixture argument.\n:::\n')
         self.run_cli("check")
+        row["formalization_request"] = {
+            "label": "Integration fixture",
+            "url": "https://github.com/the-omega-institute/trureturing-requests/issues/1"}
+        path.write_text(json.dumps(mapping))
+        self.run_cli("front")
+        self.run_cli("check")
+        row["formalization_request"]["url"] = "https://github.com/the-omega-institute/trureturing-requests/issues/2"
+        path.write_text(json.dumps(mapping))
+        self.run_cli("front")
+        self.assertIn("written-proof request differ", self.run_cli("check", expected=1))
+        del row["formalization_request"]
+        self.run_cli("front")
         row["comparison_verdict"] = "almost"
         path.write_text(json.dumps(mapping))
         self.refresh_review(mapping)
@@ -208,4 +230,7 @@ class PaperTests(unittest.TestCase):
             self.assertEqual(hashlib.sha256((output / row["path"]).read_bytes()).hexdigest(), row["sha256"])
         metadata = json.loads((output / "metadata.json").read_text())["metadata"]
         self.assertEqual(metadata["title"], self.work["title"])
-        self.assertEqual(metadata["doi"], self.work["doi"])
+        if self.work.get("doi"):
+            self.assertEqual(metadata["doi"], self.work["doi"])
+        else:
+            self.assertNotIn("doi", metadata)

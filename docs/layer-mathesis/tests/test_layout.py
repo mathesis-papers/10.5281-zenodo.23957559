@@ -90,6 +90,17 @@ class LayoutTests(unittest.TestCase):
                 self.assertIn(name + ': four zones: unknown root entry', self.issues())
                 p.unlink() if p.is_file() else p.rmdir()
 
+    def test_immutable_collection_history_is_a_paper_record_not_built_output(self):
+        name = 'versions/v1/paper.pdf'
+        self.put(name, 'original historical PDF')
+        self.assertIn('collection-history', self.issues())
+        self.json('.mathesis/collection-history.json', {'schema': 'mathesis.collection-history.v1',
+                  'work': self.slug, 'source_commit': 'a' * 40,
+                  'sha256': {name: paper.digest(self.root / name)}})
+        self.assertEqual(self.issues(), '')
+        self.put(name, 'silently changed historical PDF')
+        self.assertIn('bytes differ', self.issues())
+
     def test_examples_extra_books_and_missing_book(self):
         for name in ('example-monograph', 'another-paper'):
             p = self.put(f'books/{name}/book.toml')
@@ -112,11 +123,11 @@ class LayoutTests(unittest.TestCase):
         self.assertEqual(self.issues(), '')
 
     def test_content_entries_and_one_off_scripts(self):
-        for name in ('films/film.json', 'misc.txt', 'en/work.py'):
+        for name in ('unknown-media/asset.json', 'misc.txt', 'en/work.py'):
             p = self.put(f'books/{self.slug}/{name}')
             self.assertIn('zone 2', self.issues())
             p.unlink()
-            if name.startswith('films/'): p.parent.rmdir()
+            if name.startswith('unknown-media/'): p.parent.rmdir()
 
     def test_every_skeleton_entry_is_required_with_its_expected_type(self):
         for name in paper.layout_rules()['content']:
@@ -250,6 +261,23 @@ class LayoutTests(unittest.TestCase):
         subprocess.run(['git', '-C', str(self.root), 'add', '-f', 'build/rendered.pdf'], check=True)
         self.assertIn('build/rendered.pdf: all zones: built output', self.issues())
         self.assertIn('build: four zones: unknown root', self.issues())
+
+    def test_film_working_audio_is_local_but_cannot_be_tracked(self):
+        subprocess.run(['git', 'init', '-q', str(self.root)], check=True)
+        self.put('.gitignore', '/books/*/films/*/out/\n')
+        name = f'books/{self.slug}/films/001-intro/out/narration.wav'
+        self.put(name, 'a' * (2 * 1024 * 1024 + 1))
+        self.assertEqual(self.issues(), '')
+        subprocess.run(['git', '-C', str(self.root), 'add', '-f', name], check=True)
+        self.assertIn(name + ': all zones: exceeds 2 MiB', self.issues())
+
+    def test_unignored_film_output_and_other_out_directories_are_not_hidden(self):
+        subprocess.run(['git', 'init', '-q', str(self.root)], check=True)
+        self.put('.gitignore', '/books/*/assets/out/\n')
+        for name in (f'books/{self.slug}/films/001-intro/out/narration.wav',
+                     f'books/{self.slug}/assets/out/narration.wav'):
+            self.put(name, 'a' * (2 * 1024 * 1024 + 1))
+            self.assertIn(name + ': all zones: exceeds 2 MiB', self.issues())
 
     def test_tidy_dry_run_apply_idempotence_and_protected_zones(self):
         self.put('docs/project/validation/old.log')

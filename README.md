@@ -66,7 +66,7 @@ Book stage: **complete**; 0 pending claims. [Statement comparisons](.mathesis/RE
 | Zone | Location |
 |---|---|
 | Paper record | `paper.json`, `CITATION.cff`, `paper.pdf`, `manuscript/`, `formalization/nodes.json`, `LICENSES/`, `.mathesis/` |
-| Content | `books/chen-chen-step-m-eulerian-parity-positivity/`: Chinese/English text, figures, visualizations, slides, assets |
+| Content | `books/chen-chen-step-m-eulerian-parity-positivity/`: Chinese/English text, figures, visualizations, videos, slides, assets |
 | Machinery | Upstream and layer managed paths; update with `tbook template update` |
 | Repository front | This README, changelog, contribution guide, licence, project/site/pin configuration, `template.d/` |
 

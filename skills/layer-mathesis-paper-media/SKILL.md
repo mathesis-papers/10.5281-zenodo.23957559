@@ -1,12 +1,12 @@
 ---
 name: layer-mathesis-paper-media
-description: Produce figures, visualizations and an academic Beamer deck when upstream provides it; make Slidev only on request, using upstream skills and build units.
+description: Produce figures, visualizations, narrated video and an academic Beamer deck; make Slidev only on request, using upstream skills and build units.
 ---
 
 # Media from the checked paper book
 
 Read `docs/layer-mathesis/LAYOUT.md` for the fixed repository layout.
-Zone 2 only: `books/<slug>/figures/`, `viz/`, `slides/` and `assets/`, plus
+Zone 2 only: `books/<slug>/figures/`, `viz/`, `films/`, `slides/` and `assets/`, plus
 corresponding content references/configuration. Built outputs are local working
 files only. Do not edit zone 1 records or zone 3 machinery. Refresh the generated
 zone 4 README with `paper.py front`.
@@ -17,17 +17,33 @@ workflow run or an external workspace, including during migration.
 
 
 Read `docs/layer-mathesis/PROJECT.md` and the current book result mapping. Work
-from the converted exact-version book. First use `skills/book-figure/SKILL.md`
-for static explanatory figures beside their textual references. Then use
-`skills/book-viz/SKILL.md` for interactive experiments: choose the stage for the
+from the converted exact-version book. The story is the same bilingual
+plain-language explanation, understandable with school mathematics. Derive
+slides and narration from it, introducing specialist ideas before their names;
+do not commission a separate story or summarize away essential qualifications.
+Use `skills/book-figure/SKILL.md` when a static figure clarifies the argument,
+beside its textual reference. Judge whether interaction teaches something more:
+a changing parameter, constructed example or mathematical object should reveal
+a mechanism that prose or a static figure explains less clearly. If the story
+already teaches it well, omit interaction and record why; omission is not an
+incomplete product. For useful interactive experiments, use
+`skills/book-viz/SKILL.md`: choose the stage for the
 mathematical object, make each experiment card independently referencable from
 the book, and retain the shared runtime, evidence classes and stageFirstChecks.
 A numerical example illustrates a result; it does not certify it.
 
-Next inspect the installed upstream skill/CLI for the academic Beamer deck.
-When available, produce it through that published interface. If unavailable,
-record it as pending upstream capability. Another branch is implementing it;
-do not copy that branch, invent flags or build a private deck runtime.
+Use the installed `book-slides` interface for academic Beamer slides. Formulas
+in speaker notes need TeX math mode just as they do in audience slides. Keep
+execution/build bookkeeping in external run reports; readers need the
+mathematics, precise evidence scope, sources and contribution links. Then use
+`skills/book-film/SKILL.md` for a narrated video from the same checked story,
+with aligned Chinese/English subtitles. Build through upstream commands and
+require the actual playable MP4. The post-build manifest lists only actual
+built outputs; a skipped render or empty film registry is not completion.
+Video remains a required planned content product. While it is unavailable,
+record it as pending and retain publication/display of the eligible public
+paper and its existing checked materials; do not invent a video link or
+reschedule already reviewed story/slides work.
 Only on explicit request, then use `skills/book-slides/SKILL.md` for the aligned
 Slidev deck and `./tbook build slides`. The default PDF is the academic variant
 (`outputs.pdf = ["academic"]`); screen/print require a paper-specific request.
